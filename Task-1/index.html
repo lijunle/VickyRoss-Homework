@@ -1,0 +1,216 @@
+<header>
+		<div class="title">
+			<h1>Koa</h1>
+			<p>new genaration web framework for node.js</p>
+		</div>
+	</header>
+	<hr />
+	<section class="introduction">
+		<div>
+			<h1>Introduction</h1>
+			<p>Koa is a new web framework designed by the team behind
+				Express, which aims to be a smaller, more expressive, and more
+				robust foundation for web applications and APIs. Through leveraging
+				generators Koa allows you to ditch callbacks and greatly increase
+				error-handling. Koa does not bundle any middleware within core, and
+				provides an elegant suite of methods that make writing servers fast
+				and enjoyable.</p>
+		</div>
+	</section>
+	<hr />
+	<section class="ia">
+		<div class="installation">
+			<h1>Installation</h1>
+			<p>
+				Koa works out of the box with recent versions of Node. To use Koa
+				with 0.11.x you must use the <span>--harmony</span> or <span>--harmony-generators</span>
+				flag.
+			</p>
+			<hr />
+			<pre>
+$ npm install koa
+$ node app.js
+			</pre>
+
+			<hr />
+		</div>
+		<div class="application">
+			<h1>Application</h1>
+			<p>A Koa application is an object containing an array of
+				middleware generator functions which are composed and executed in a
+				stack-like manner upon request. Koa is similar to many other
+				middleware systems that you may have encountered such as Ruby's
+				Rack, Connect, and so on - however a key design decision was made to
+				provide high level "sugar" at the otherwise low-level middleware
+				layer. This improves interoperability, robustness, and makes writing
+				middleware much more enjoyable. This includes methods for common
+				tasks like content-negotiation, cache freshness, proxy support, and
+				redirection among others. Despite supplying a reasonably large
+				number of helpful methods Koa maintains a small footprint, as no
+				middleware are bundled. The obligatory hello world application:</p>
+
+			<hr />
+			<pre>
+var koa = require('koa');
+var app = koa();
+
+app.use(function *(){
+this.body = 'Hello World';
+});
+
+app.listen(3000);
+
+		</pre>
+
+			<hr />
+			<div id="cascading">
+				<h2>Cascading</h2>
+				<p>
+					Koa middleware cascade in a more traditional way as you may be used
+					to with similar tools - this was previously difficult to make user
+					friendly with node's use of callbacks. However with generators we
+					can achieve "true" middleware. Contrasting Connect's implementation
+					which simply passes control through series of functions until one
+					returns, Koa yields "downstream", then control flows back
+					"upstream". <br /> <br />The following example responds with
+					"Hello World", however first the request flows through the <span>x-response-time</span>
+					and <span>logging</span> middleware to mark when the request
+					started, then continue to yield control through the response
+					middleware. When a middleware invokes <span>yield next</span> the
+					function suspends and passes control to the next middleware
+					defined. After there are no more middleware to execute downstream,
+					the stack will unwind and each middleware is resumed to perform its
+					upstream behaviour.
+				</p>
+				<hr />
+				<pre>
+var koa = require('koa');
+var app = koa();
+
+// x-response-time
+
+app.use(function *(next){
+  var start = new Date;
+  yield next; var ms = new Date - start;
+  this.set('X-Response-Time', ms + 'ms');
+});
+
+// logger
+
+app.use(function *(next){
+  var start = new Date;
+  yield next;
+  var ms = new Date - start;
+  console.log('%s %s - %s', this.method, this.url, ms);
+});
+
+// response
+
+app.use(function *(){
+  this.body = 'Hello World';
+});
+
+app.listen(3000);
+		</pre>
+
+				<hr />
+			</div>
+			<div id="settings">
+				<h2>Settings</h2>
+				<p>Application settings are properties on the app instance,
+					currently the following are supported:</p>
+				<ul>
+					<li>app.name <span>optionally give your application a
+							name</span></li>
+					<li>app.env<span> defaulting to the <span>NODE_ENV</span>
+							or "development"
+					</span></li>
+					<li>app.proxy <span>when true proxy header fields will
+							be trusted</span></li>
+					<li>app.subdomainOffset <span>offset of .subdomains to
+							ignore [2]</span></li>
+				</ul>
+			</div>
+			<div id="app.listen">
+				<h2>app.listen(...)</h2>
+				<p>
+					A Koa application is not a 1-to-1 representation of a HTTP server.
+					One or more Koa applications may be mounted together to form larger
+					applications with a single HTTP server.<br /> <br /> Create and
+					return an HTTP server, passing the given arguments to <span>Server#listen()</span>.
+					These arguments are documented on <a href="#">nodejs.org</a>. The
+					following is a useless Koa application bound to port <span>3000</span>:
+				</p>
+				<hr />
+				<pre>
+var koa = require('koa');
+var app = koa();
+app.listen(3000);
+				</pre>
+				<hr />
+				<p>
+					The <span>app.listen(...)</span> method is simply sugar for the
+					following:
+				</p>
+				<hr />
+				<pre>
+var http = require('http');
+var koa = require('koa');
+var app = koa();
+http.createServer(app.callback()).listen(3000);
+				</pre>
+				<hr />
+				<p>When an error occurs and it is still possible to respond to
+					the client, aka no data has been written to the socket, Koa will
+					respond appropriately with a 500 "Internal Server Error". In either
+					case an app-level "error" is emitted for logging purposes.</p>
+
+			</div>
+		</div>
+
+	</section>
+	<hr />
+	<section class="context">
+		<div>
+			<h1>Context</h1>
+			<p>
+				A Koa Context encapsulates node's <span>request</span> and <span>response</span>
+				objects into a single object which provides many helpful methods for
+				writing web applications and APIs. These operations are used so
+				frequently in HTTP server development that they are added at this
+				level instead of a higher level framework, which would force
+				middleware to re-implement this common functionality. <br /> A <span>Context</span>
+				is created per request, and is referenced in middleware as the
+				receiver, or the <span>this</span> identifier, as shown in the
+				following snippet:
+			</p>
+			<h3>response.vary(field)</h3>
+			<p>
+				Vary on <span>field.</span>
+			</p>
+
+		</div>
+
+	</section>
+	<hr />
+	<section class="link">
+		<div>
+			<h1>Links</h1>
+			<p>Community links to discover third-party middleware for Koa,
+				full runnable examples, thorough guides and more! If you have
+				questions join us in IRC!</p>
+			<ul>
+				<li><a href="#">GitHub repository</a></li>
+				<li><a href="#">Examples</a></li>
+				<li><a href="#">Middleware</a></li>
+				<li><a href="#">Wiki</a></li>
+				<li><a href="#">G+ Community</a></li>
+				<li><a href="#">Mailing list</a></li>
+				<li><a href="#">Guide</a></li>
+				<li><a href="#">FAQ</a></li>
+				<li>#koajs <span>on freenode</span></li>
+
+
+			</ul>
+		</div>
+	</section>
