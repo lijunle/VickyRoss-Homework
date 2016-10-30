@@ -1,13 +1,60 @@
 # 仿照 [Koa 官网](http://koajs.com/)
 
-## 要求
+- 代码网址：http://s.codepen.io/VickyRoss/pen/vXwJwE
+- Demo 网址：http://s.codepen.io/VickyRoss/debug/vXwJwE
+
+## 要求一
 
 实现除右上角菜单外的其他页面样式，要求通过 IE，Chrome 和 Firefox 测试。
 
-## Demo 网址
+### 知识点
 
-http://s.codepen.io/VickyRoss/debug/vXwJwE
+- 行内元素（inline element），行块元素（block element）
+- 盒子模型（boxing model）
 
-## 完成情况
+### 完成情况
 
-代码审查中
+:eyes: 代码审查中：https://github.com/lijunle/VickyRoss-Homework/pull/1
+
+## 要求二
+
+使用绝对定位实现右上角的菜单按钮。只需要实现菜单按钮，不需要实现按下菜单按钮弹出功能。菜单按钮的图标可以用文字代替。
+
+先尝试实现：菜单按钮位于**页面**右上角，滚动屏幕**不跟随**屏幕滚动。然后实现：菜单按钮位于**窗口**右上角，**跟随**屏幕滚动（Koa官网是这种风格的）。
+
+*提示：*定位属性（position）比浮动属性（float）有用，并且更加常用。应该多加理解和实践。
+
+### 知识点
+
+- 流式布局
+- position 属性
+
+### 参考资料
+
+- http://zh.learnlayout.com/position.html （这个网站不错，很多CSS的难点都讲到了。）
+- http://fangjian0423.github.io/2015/03/01/css_position/
+
+## 要求三
+
+使用伪类选择器实现：当鼠标悬浮菜单按钮的时候，菜单弹出来。菜单内容可以先随便填一段话。菜单按钮和菜单需要实现右边对齐。
+
+*提示：*需要多次使用绝对定位使元素位置放在合适位置。善于使用`<div>`去创造绝对定位的条件。
+
+### 知识点
+
+- 伪类选择器
+- 绝对定位
+- 盒子模型
+
+### 参考资料
+
+- http://www.cnblogs.com/xiaohuochai/p/5518943.html
+- http://www.runoob.com/css/css-dropdowns.html
+
+## 要求四
+
+页面内链接，菜单样式。
+
+## 要求五
+
+响应式布局。
