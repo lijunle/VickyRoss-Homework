@@ -1,16 +1,14 @@
 @CHARSET "UTF-8";
 
-header {
+#header {
 	height: 600px;
 }
 
-h1 {
-	margin: 0;
-  -moz-user-select: none;
-  -ms-user-select: none;
+h1{
+  margin:0;
 }
 
-.title p{
+.not-selectable{
   -moz-user-select: none;
   -ms-user-select: none;
 }
@@ -21,9 +19,9 @@ hr {
 }
 
 pre {
-	position: relative;
-	left: 28px;
-	top: 18px;
+  border-top:2px solid #EAEAEC;
+  border-bottom:2px solid #EAEAEC;
+	padding:20px 15px;
 }
 
 span {
@@ -50,7 +48,7 @@ section {
 	background: #d1cdcd1a;
 }
 
-.ia {
+.content {
 	padding-bottom: 150px;
 }
 

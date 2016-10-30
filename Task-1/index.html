@@ -1,7 +1,7 @@
-<header>
-		<div class="title">
-			<h1>Koa</h1>
-			<p>new genaration web framework for node.js</p>
+<header id="header">
+		<div class="not-selectable title">
+			<h1 >Koa</h1>
+			<p >new genaration web framework for node.js</p>
 		</div>
 	</header>
 	<hr />
@@ -18,21 +18,20 @@
 		</div>
 	</section>
 	<hr />
-	<section class="ia">
+	<section class="content">
 		<div class="installation">
 			<h1>Installation</h1>
 			<p>
 				Koa works out of the box with recent versions of Node. To use Koa
-				with 0.11.x you must use the <span>--harmony</span> or <span>--harmony-generators</span>
+				with 0.11.x you must use the <code>--harmony</code> or <code>--harmony-generators</code>
 				flag.
 			</p>
-			<hr />
+
 			<pre>
 $ npm install koa
-$ node app.js
-			</pre>
+$ node app.js</pre>
 
-			<hr />
+
 		</div>
 		<div class="application">
 			<h1>Application</h1>
@@ -49,7 +48,7 @@ $ node app.js
 				number of helpful methods Koa maintains a small footprint, as no
 				middleware are bundled. The obligatory hello world application:</p>
 
-			<hr />
+
 			<pre>
 var koa = require('koa');
 var app = koa();
@@ -58,11 +57,9 @@ app.use(function *(){
 this.body = 'Hello World';
 });
 
-app.listen(3000);
+app.listen(3000);	</pre>
 
-		</pre>
 
-			<hr />
 			<div id="cascading">
 				<h2>Cascading</h2>
 				<p>
@@ -72,17 +69,19 @@ app.listen(3000);
 					can achieve "true" middleware. Contrasting Connect's implementation
 					which simply passes control through series of functions until one
 					returns, Koa yields "downstream", then control flows back
-					"upstream". <br /> <br />The following example responds with
-					"Hello World", however first the request flows through the <span>x-response-time</span>
-					and <span>logging</span> middleware to mark when the request
+					"upstream".
+          <p>The following example responds with
+					"Hello World", however first the request flows through the <code>x-response-time</code>
+					and <code>logging</code> middleware to mark when the request
 					started, then continue to yield control through the response
-					middleware. When a middleware invokes <span>yield next</span> the
+					middleware. When a middleware invokes <code>yield next</code> the
 					function suspends and passes control to the next middleware
 					defined. After there are no more middleware to execute downstream,
 					the stack will unwind and each middleware is resumed to perform its
 					upstream behaviour.
+          </p>
 				</p>
-				<hr />
+
 				<pre>
 var koa = require('koa');
 var app = koa();
@@ -110,18 +109,16 @@ app.use(function *(){
   this.body = 'Hello World';
 });
 
-app.listen(3000);
-		</pre>
+app.listen(3000);	</pre>
 
-				<hr />
+
 			</div>
 			<div id="settings">
 				<h2>Settings</h2>
 				<p>Application settings are properties on the app instance,
 					currently the following are supported:</p>
 				<ul>
-					<li>app.name <span>optionally give your application a
-							name</span></li>
+					<li>app.name <span>optionally give your application a name</span></li>
 					<li>app.env<span> defaulting to the <span>NODE_ENV</span>
 							or "development"
 					</span></li>
@@ -137,29 +134,27 @@ app.listen(3000);
 					A Koa application is not a 1-to-1 representation of a HTTP server.
 					One or more Koa applications may be mounted together to form larger
 					applications with a single HTTP server.<br /> <br /> Create and
-					return an HTTP server, passing the given arguments to <span>Server#listen()</span>.
+					return an HTTP server, passing the given arguments to <code>Server#listen()</code>.
 					These arguments are documented on <a href="#">nodejs.org</a>. The
-					following is a useless Koa application bound to port <span>3000</span>:
+					following is a useless Koa application bound to port <code>3000</code>:
 				</p>
-				<hr />
+
 				<pre>
 var koa = require('koa');
 var app = koa();
-app.listen(3000);
-				</pre>
-				<hr />
+app.listen(3000);</pre>
+
 				<p>
-					The <span>app.listen(...)</span> method is simply sugar for the
+					The <code>app.listen(...)</code> method is simply sugar for the
 					following:
 				</p>
-				<hr />
+
 				<pre>
 var http = require('http');
 var koa = require('koa');
 var app = koa();
-http.createServer(app.callback()).listen(3000);
-				</pre>
-				<hr />
+http.createServer(app.callback()).listen(3000);</pre>
+
 				<p>When an error occurs and it is still possible to respond to
 					the client, aka no data has been written to the socket, Koa will
 					respond appropriately with a 500 "Internal Server Error". In either
@@ -174,19 +169,19 @@ http.createServer(app.callback()).listen(3000);
 		<div>
 			<h1>Context</h1>
 			<p>
-				A Koa Context encapsulates node's <span>request</span> and <span>response</span>
+				A Koa Context encapsulates node's <code>request</code> and <code>response</code>
 				objects into a single object which provides many helpful methods for
 				writing web applications and APIs. These operations are used so
 				frequently in HTTP server development that they are added at this
 				level instead of a higher level framework, which would force
-				middleware to re-implement this common functionality. <br /> A <span>Context</span>
+				middleware to re-implement this common functionality. <br /> A <code>Context</code>
 				is created per request, and is referenced in middleware as the
-				receiver, or the <span>this</span> identifier, as shown in the
+				receiver, or the <code>this</code> identifier, as shown in the
 				following snippet:
 			</p>
 			<h3>response.vary(field)</h3>
 			<p>
-				Vary on <span>field.</span>
+				Vary on <code>field.</code>
 			</p>
 
 		</div>
@@ -208,7 +203,7 @@ http.createServer(app.callback()).listen(3000);
 				<li><a href="#">Mailing list</a></li>
 				<li><a href="#">Guide</a></li>
 				<li><a href="#">FAQ</a></li>
-				<li>#koajs <span>on freenode</span></li>
+				<li>#koajs <code>on freenode</code></li>
 
 
 			</ul>
