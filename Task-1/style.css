@@ -2,6 +2,33 @@
 
 #header {
 	height: 600px;
+  position:relative;
+}
+#menu{
+  position:absolute;
+  right:40px;
+  top:35px;
+  
+}
+ 
+#menu li{
+  padding:10px;
+  list-style:none;
+  border:1px solid #EAEAEC;
+}
+#header a{
+  text-decoration:none;
+}
+
+#menucontent {
+  border:1px solid #EAEAEC;
+  width:150px;
+  position:absolute;
+  right:40px;
+  top:90px;
+}
+#menucontent li{
+  list-style:none;
 }
 
 h1{
