@@ -1,5 +1,20 @@
 <header id="header">
+  <div id="menu">
+  <ul>
+    <li><a href="#">菜单</a></li>
+  </ul>
+   </div>
+  <div id="menucontent">
+    <ul>
+      <li><a href="#">introduction</a></li>
+      <li><a href="#">Application</a></li>
+      <li><a href="#">Context</a></li>
+      <li><a href="#">Links</a></li>
+    </ul>
+  </div>
+  
 		<div class="not-selectable title">
+      
 			<h1 >Koa</h1>
 			<p >new genaration web framework for node.js</p>
 		</div>
@@ -26,12 +41,12 @@
 				with 0.11.x you must use the <code>--harmony</code> or <code>--harmony-generators</code>
 				flag.
 			</p>
-
+			
 			<pre>
 $ npm install koa
 $ node app.js</pre>
 
-
+			
 		</div>
 		<div class="application">
 			<h1>Application</h1>
@@ -48,18 +63,18 @@ $ node app.js</pre>
 				number of helpful methods Koa maintains a small footprint, as no
 				middleware are bundled. The obligatory hello world application:</p>
 
-
+		
 			<pre>
 var koa = require('koa');
 var app = koa();
-
+			
 app.use(function *(){
 this.body = 'Hello World';
 });
-
+			
 app.listen(3000);	</pre>
 
-
+			
 			<div id="cascading">
 				<h2>Cascading</h2>
 				<p>
@@ -69,7 +84,7 @@ app.listen(3000);	</pre>
 					can achieve "true" middleware. Contrasting Connect's implementation
 					which simply passes control through series of functions until one
 					returns, Koa yields "downstream", then control flows back
-					"upstream".
+					"upstream". 
           <p>The following example responds with
 					"Hello World", however first the request flows through the <code>x-response-time</code>
 					and <code>logging</code> middleware to mark when the request
@@ -81,37 +96,37 @@ app.listen(3000);	</pre>
 					upstream behaviour.
           </p>
 				</p>
-
+				
 				<pre>
 var koa = require('koa');
-var app = koa();
+var app = koa(); 
 
-// x-response-time
+// x-response-time 
 
-app.use(function *(next){
-  var start = new Date;
-  yield next; var ms = new Date - start;
-  this.set('X-Response-Time', ms + 'ms');
-});
+app.use(function *(next){ 
+  var start = new Date; 
+  yield next; var ms = new Date - start; 
+  this.set('X-Response-Time', ms + 'ms'); 
+}); 
 
-// logger
+// logger 
 
-app.use(function *(next){
-  var start = new Date;
-  yield next;
-  var ms = new Date - start;
-  console.log('%s %s - %s', this.method, this.url, ms);
-});
+app.use(function *(next){ 
+  var start = new Date; 
+  yield next; 
+  var ms = new Date - start; 
+  console.log('%s %s - %s', this.method, this.url, ms); 
+}); 
 
-// response
+// response 
 
-app.use(function *(){
-  this.body = 'Hello World';
-});
+app.use(function *(){ 
+  this.body = 'Hello World'; 
+}); 
 
 app.listen(3000);	</pre>
 
-
+				
 			</div>
 			<div id="settings">
 				<h2>Settings</h2>
@@ -138,23 +153,23 @@ app.listen(3000);	</pre>
 					These arguments are documented on <a href="#">nodejs.org</a>. The
 					following is a useless Koa application bound to port <code>3000</code>:
 				</p>
-
+				
 				<pre>
 var koa = require('koa');
 var app = koa();
 app.listen(3000);</pre>
-
+				
 				<p>
 					The <code>app.listen(...)</code> method is simply sugar for the
 					following:
 				</p>
-
+				
 				<pre>
 var http = require('http');
 var koa = require('koa');
 var app = koa();
 http.createServer(app.callback()).listen(3000);</pre>
-
+				
 				<p>When an error occurs and it is still possible to respond to
 					the client, aka no data has been written to the socket, Koa will
 					respond appropriately with a 500 "Internal Server Error". In either
