@@ -9,8 +9,13 @@
 
 ### 知识点
 
+- HTML语义化
 - 行内元素（inline element），行块元素（block element）
 - 盒子模型（boxing model）
+
+### 参考知识
+
+- http://www.cnblogs.com/freeyiyi1993/p/3615179.html
 
 ### 完成情况
 
