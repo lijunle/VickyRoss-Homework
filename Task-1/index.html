@@ -1,7 +1,7 @@
 <header id="header">
   <div class="menu">
     <a href="#">菜单</a> 
-        <ul>
+        <ul class="dropdown-content">
           <li><a href="#">introduction</a></li>
       <li><a href="#">Application</a></li>
       <li><a href="#">Context</a></li>
@@ -127,14 +127,9 @@ app.listen(3000);	</pre>
 				<p>Application settings are properties on the app instance,
 					currently the following are supported:</p>
 				<ul>
-					<li>app.name <span>optionally give your application a name</span></li>
-					<li>app.env<span> defaulting to the <span class="font-weight800">NODE_ENV</span>
-							or "development"
-					</span></li>
-					<li>app.proxy <span>when true proxy header fields will
-							be trusted</span></li>
-					<li>app.subdomainOffset <span>offset of .subdomains to
-							ignore [2]</span></li>
+          <li><code>app.name</code> optionally give your application a name</li>
+          <li><code>app.env</code> defaulting to the <strong>NODE_ENV</strong> or "development"</li>
+          <li><code>app.proxywhen</code> true proxy header fields will be trusted</li>              <li><code>app.subdomainOffset</code>    offset of .subdomains to ignore [2]</li>
 				</ul>
 			</div>
 			<div id="app.listen">
