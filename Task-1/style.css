@@ -1,34 +1,48 @@
-@CHARSET "UTF-8";
+@charset "UTF-8";
 
 #header {
 	height: 600px;
   position:relative;
 }
-#menu{
+.menu{
   position:absolute;
-  right:40px;
-  top:35px;
-  
+  top:30px;
+  right:80px;
 }
- 
-#menu li{
-  padding:10px;
-  list-style:none;
-  border:1px solid #EAEAEC;
-}
-#header a{
+.menu a{
   text-decoration:none;
+  display:block;
+  width:50px;
+  height:35px;
+  text-align:center;
+  background:#eee;
+}
+.menu ul{
+  padding:0;
+  margin:0;
+  list-style:none;
+}
+.menu ul li a{
+  background:#eee;
+  width:120px;
+  height:30px;
+  text-align:left;
 }
 
-#menucontent {
-  border:1px solid #EAEAEC;
-  width:150px;
-  position:absolute;
-  right:40px;
-  top:90px;
+.menu a:hover{
+  background:#09f;
+  font-weight:bold;
 }
-#menucontent li{
-  list-style:none;
+.menu ul{
+  display:none;
+  position:absolute;
+}
+.menu a:hover ul{
+  display:block;
+}
+
+.menu a:hover ul li a{
+  display:block;
 }
 
 h1{
@@ -49,10 +63,6 @@ pre {
   border-top:2px solid #EAEAEC;
   border-bottom:2px solid #EAEAEC;
 	padding:20px 15px;
-}
-
-span {
-	font-weight: lighter;
 }
 
 section {
@@ -91,15 +101,15 @@ section>div {
 	padding-top: 60px;
 }
 
-.application ul li {
+#settings ul li {
 	font-size: 10px;
 }
 
-.application ul li span {
+#settings ul li span {
 	font-size: 14px;
 }
 
-.application ul li span>span {
+.font-weight800 {
 	font-weight: 800;
 }
 
