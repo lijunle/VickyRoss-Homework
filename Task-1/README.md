@@ -75,6 +75,7 @@
 ### 参考资料
 
 - http://www.cnblogs.com/iyangyuan/archive/2013/03/27/2983813.html （这文章讲解float非常详细，需要细读）
+- http://www.w3school.com.cn/css/css_positioning_floating.asp
 - https://segmentfault.com/a/1190000004237437 （理解clear最优实现的原理）
 - http://www.zhangxinxu.com/wordpress/2013/08/url-anchor-html-%E9%94%9A%E7%82%B9%E5%AE%9A%E4%BD%8D%E6%9C%BA%E5%88%B6-%E5%BA%94%E7%94%A8-%E9%97%AE%E9%A2%98/ （这篇文章废话太多，看完第一和第二点就可以了）
 
