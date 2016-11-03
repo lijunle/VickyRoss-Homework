@@ -81,16 +81,16 @@
 
 ## 要求五
 
-[响应式布局](https://www.zhihu.com/question/20976405)。实现浏览器宽度从大拉到小，行为都和 Koa 官网一样。特别注意 Koa 那个大标题在不断拉小的过程中的变化。
+[响应式布局](https://www.zhihu.com/question/20976405)。实现浏览器宽度从宽拉到窄，行为都和 Koa 官网一样。特别注意 Koa 那个大标题在不断拉窄的过程中的变化。
 
 另外，响应式布局有很多现成的框架，例如最出名的 Bootstrap，但是初学者应该理解一些基础知识。响应式布局是移动互联网的基础基石之一，它在笔试面试实践中都非常重要。
 
 ### 知识点
 
 - 相应式布局
-- 流式布局（fluid layout）
 - 媒体查询（media query）
 
 ### 参考资料
 
-- http://www.w3cplus.com/css/advanced-html-css-lesson4-responsive-web-design.html （讲得非常详细，Koa 并没有使用流式布局，不过可以了解）
+- http://www.ibm.com/developerworks/cn/web/wa-cssqueries/ （相应式布局和媒体查询的详细介绍）
+- http://www.runoob.com/cssref/css3-pr-mediaquery.html （媒体查询的参考指南）
