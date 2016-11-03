@@ -2,10 +2,10 @@
   <div class="menu">
     <a href="#">菜单</a> 
         <ul class="dropdown-content">
-          <li><a href="#">introduction</a></li>
-      <li><a href="#">Application</a></li>
-      <li><a href="#">Context</a></li>
-<li><a href="#">Links</a></li>
+          <li><a href="#introduction">introduction</a></li>
+      <li><a href="#application">Application</a></li>
+      <li><a href="#context">Context</a></li>
+<li><a href="#link">Links</a></li>
         </ul>
   </div>
 
@@ -17,8 +17,9 @@
 	</header>
 	<hr />
 	<section class="introduction">
+   
 		<div>
-			<h1>Introduction</h1>
+      <h1><a name="introduction">Introduction</a></h1>
 			<p>Koa is a new web framework designed by the team behind
 				Express, which aims to be a smaller, more expressive, and more
 				robust foundation for web applications and APIs. Through leveraging
@@ -43,6 +44,7 @@ $ npm install koa
 $ node app.js</pre>
 		</div>
 		<div class="application">
+      <a name="application"></a>
 			<h1>Application</h1>
 			<p>A Koa application is an object containing an array of
 				middleware generator functions which are composed and executed in a
@@ -137,7 +139,8 @@ app.listen(3000);	</pre>
 				<p>
 					A Koa application is not a 1-to-1 representation of a HTTP server.
 					One or more Koa applications may be mounted together to form larger
-					applications with a single HTTP server.<br /> <br /> Create and
+          applications with a single HTTP server.</P>
+    <p>Create and
 					return an HTTP server, passing the given arguments to <code>Server#listen()</code>.
 					These arguments are documented on <a href="#">nodejs.org</a>. The
 					following is a useless Koa application bound to port <code>3000</code>:
@@ -171,7 +174,7 @@ http.createServer(app.callback()).listen(3000);</pre>
 	<hr />
 	<section class="context">
 		<div>
-			<h1>Context</h1>
+			<h1><a name="context">Context</a></h1>
 			<p>
 				A Koa Context encapsulates node's <code>request</code> and <code>response</code>
 				objects into a single object which provides many helpful methods for
@@ -193,8 +196,9 @@ http.createServer(app.callback()).listen(3000);</pre>
 	</section>
 	<hr />
 	<section class="link">
+   
 		<div>
-			<h1>Links</h1>
+			<h1> <a name="link">Links</a></h1>
 			<p>Community links to discover third-party middleware for Koa,
 				full runnable examples, thorough guides and more! If you have
 				questions join us in IRC!</p>
