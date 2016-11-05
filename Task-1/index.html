@@ -1,6 +1,5 @@
-<header id="header">
-  <div class="menu">
-    <a href="#">菜单</a> 
+<div class="menu">
+    <button class="menubt">菜单</button> 
         <ul class="dropdown-content">
           <li><a href="#introduction">introduction</a></li>
       <li><a href="#application">Application</a></li>
@@ -9,17 +8,17 @@
         </ul>
   </div>
 
-		<div class="not-selectable title">
-      
+<header id="header" class="title">
+  <div class="not-selectable inner-box">
 			<h1 >Koa</h1>
-			<p >new genaration web framework for node.js</p>
-		</div>
+			<p>new genaration web framework for node.js</p>
+  </div>
 	</header>
+
 	<hr />
-	<section class="introduction">
-   
-		<div>
-      <h1><a name="introduction">Introduction</a></h1>
+	<section id="introduction" class="box">
+		<div class="inner-box">
+      <h1><a id="introduction">Introduction</a></h1>
 			<p>Koa is a new web framework designed by the team behind
 				Express, which aims to be a smaller, more expressive, and more
 				robust foundation for web applications and APIs. Through leveraging
@@ -28,23 +27,23 @@
 				provides an elegant suite of methods that make writing servers fast
 				and enjoyable.</p>
 		</div>
-	</section>
+	</section> 
 	<hr />
-	<section class="content">
-		<div class="installation">
+	<section id="content" class="box">
+		<div class="inner-box">
 			<h1>Installation</h1>
 			<p>
 				Koa works out of the box with recent versions of Node. To use Koa
 				with 0.11.x you must use the <code>--harmony</code> or <code>--harmony-generators</code>
 				flag.
 			</p>
-			
 			<pre>
 $ npm install koa
 $ node app.js</pre>
 		</div>
-		<div class="application">
-      <a name="application"></a>
+    
+		<div id="application" class="content-spacing inner-box">
+      <a id="application"></a>
 			<h1>Application</h1>
 			<p>A Koa application is an object containing an array of
 				middleware generator functions which are composed and executed in a
@@ -58,8 +57,6 @@ $ node app.js</pre>
 				redirection among others. Despite supplying a reasonably large
 				number of helpful methods Koa maintains a small footprint, as no
 				middleware are bundled. The obligatory hello world application:</p>
-
-		
 			<pre>
 var koa = require('koa');
 var app = koa();
@@ -71,7 +68,7 @@ this.body = 'Hello World';
 app.listen(3000);	</pre>
 
 			
-			<div id="cascading">
+			<div id="cascading" class="content-spacing">
 				<h2>Cascading</h2>
 				<p>
 					Koa middleware cascade in a more traditional way as you may be used
@@ -80,7 +77,7 @@ app.listen(3000);	</pre>
 					can achieve "true" middleware. Contrasting Connect's implementation
 					which simply passes control through series of functions until one
 					returns, Koa yields "downstream", then control flows back
-					"upstream". 
+          "upstream".</p>
           <p>The following example responds with
 					"Hello World", however first the request flows through the <code>x-response-time</code>
 					and <code>logging</code> middleware to mark when the request
@@ -91,7 +88,6 @@ app.listen(3000);	</pre>
 					the stack will unwind and each middleware is resumed to perform its
 					upstream behaviour.
           </p>
-				</p>
 				
 				<pre>
 var koa = require('koa');
@@ -121,10 +117,9 @@ app.use(function *(){
 }); 
 
 app.listen(3000);	</pre>
-
-				
 			</div>
-			<div id="settings">
+      
+			<div id="settings" class="content-spacing">
 				<h2>Settings</h2>
 				<p>Application settings are properties on the app instance,
 					currently the following are supported:</p>
@@ -134,12 +129,12 @@ app.listen(3000);	</pre>
           <li><code>app.proxywhen</code> true proxy header fields will be trusted</li>              <li><code>app.subdomainOffset</code>    offset of .subdomains to ignore [2]</li>
 				</ul>
 			</div>
-			<div id="app.listen">
+			<div id="app.listen" class="content-spacing">
 				<h2>app.listen(...)</h2>
 				<p>
 					A Koa application is not a 1-to-1 representation of a HTTP server.
 					One or more Koa applications may be mounted together to form larger
-          applications with a single HTTP server.</P>
+          applications with a single HTTP server.</p>
     <p>Create and
 					return an HTTP server, passing the given arguments to <code>Server#listen()</code>.
 					These arguments are documented on <a href="#">nodejs.org</a>. The
@@ -166,15 +161,14 @@ http.createServer(app.callback()).listen(3000);</pre>
 					the client, aka no data has been written to the socket, Koa will
 					respond appropriately with a 500 "Internal Server Error". In either
 					case an app-level "error" is emitted for logging purposes.</p>
-
 			</div>
 		</div>
-
 	</section>
+
 	<hr />
-	<section class="context">
-		<div>
-			<h1><a name="context">Context</a></h1>
+	<section id="context" class="box">
+		<div class="inner-box">
+			<h1><a id="context">Context</a></h1>
 			<p>
 				A Koa Context encapsulates node's <code>request</code> and <code>response</code>
 				objects into a single object which provides many helpful methods for
@@ -195,10 +189,9 @@ http.createServer(app.callback()).listen(3000);</pre>
 
 	</section>
 	<hr />
-	<section class="link">
-   
-		<div>
-			<h1> <a name="link">Links</a></h1>
+	<section id="link" class="box">
+		<div class="inner-box">
+			<h1> <a id="link">Links</a></h1>
 			<p>Community links to discover third-party middleware for Koa,
 				full runnable examples, thorough guides and more! If you have
 				questions join us in IRC!</p>
@@ -212,8 +205,6 @@ http.createServer(app.callback()).listen(3000);</pre>
 				<li><a href="#">Guide</a></li>
 				<li><a href="#">FAQ</a></li>
 				<li>#koajs <code>on freenode</code></li>
-
-
 			</ul>
 		</div>
 	</section>
