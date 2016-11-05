@@ -17,10 +17,6 @@
 
 - http://www.cnblogs.com/freeyiyi1993/p/3615179.html
 
-### 完成情况
-
-:eyes: 代码审查中：https://github.com/lijunle/VickyRoss-Homework/pull/1
-
 ## 要求二
 
 使用绝对定位实现右上角的菜单按钮。只需要实现菜单按钮，不需要实现按下菜单按钮弹出功能。菜单按钮的图标可以用文字代替。
@@ -38,10 +34,6 @@
 
 - http://zh.learnlayout.com/position.html （这个网站不错，很多CSS的难点都讲到了。）
 - http://fangjian0423.github.io/2015/03/01/css_position/
-
-### 完成情况
-
-:eyes: 代码审查中：https://github.com/lijunle/VickyRoss-Homework/pull/1
 
 ## 要求三
 
