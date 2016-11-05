@@ -89,8 +89,10 @@
 
 - 相应式布局
 - 媒体查询（media query）
+- Viewport
 
 ### 参考资料
 
 - http://www.ibm.com/developerworks/cn/web/wa-cssqueries/ （相应式布局和媒体查询的详细介绍）
 - http://www.runoob.com/cssref/css3-pr-mediaquery.html （媒体查询的参考指南）
+- https://webdesign.tutsplus.com/zh-hans/articles/quick-tip-dont-forget-the-viewport-meta-tag--webdesign-5972 （Viewport）
