@@ -1,5 +1,8 @@
 # 仿制 [Tap CLI 页面](http://www.node-tap.org/cli/)
 
+- 代码网址：http://s.codepen.io/VickyRoss/pen/ZBYBeO
+- Demo 网址：http://s.codepen.io/VickyRoss/debug/ZBYBeO
+
 ## 要求一
 
 实现左右两栏布局。要求右边主体滚动过程中，左边侧边栏固定不动。
