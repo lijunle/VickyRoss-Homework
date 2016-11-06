@@ -31,3 +31,15 @@ Bootstrap 框架由3部分组成，第一是基础CSS样式，第二是组件（
 ### 知识点
 
 - Bootstrap off canvas
+
+### 要求三
+
+Bootstrap 虽然是现在最流行的前端框架，但是不代表它没有缺点，也不代表它没有其他竞争者。
+
+下面是一些 Bootstrap 之外的前端框架，你可以稍作了解：
+
+- PureCSS: http://www.purecss.org/
+- Min: http://mincss.com/
+- Basecss: http://basscss.com/
+- Hover.css: http://ianlunn.github.io/Hover/
+- Flexible Grid System: http://flexible.gs/
