@@ -1,0 +1,92 @@
+body{
+  padding:0;
+  margin:0;
+}
+.top{
+  position:fixed;
+  height:10px;
+  background:yellow;
+  width:100%;
+}
+.box{
+  width:800px;
+  margin:0 auto;
+  position:relative;
+  top:30px;
+}
+#logo{
+  width:100px;
+  height:100px;
+}
+#navigation{
+  width:200px;
+  float:left;
+  position:fixed;
+}
+.nopadding-margin{
+  padding:0;
+  margin:0;
+}
+.API-padding{
+  padding-left:15px;
+}
+
+.nav-selection li{
+  list-style:none;
+}
+.nav-selection li a{
+  display:block;
+  width:100%;
+}
+.code-selection a{
+  padding-top:15px;
+  display:block;
+}
+
+#content{
+  width:600px;
+  float:right;
+}
+.CLI-nomargintop{
+  margin-top:0;
+}
+
+@media screen and (max-width:800px){
+  .box{
+  margin:0;
+  width:100%;
+}
+  #navigation{
+  width:100%;
+  position:relative;
+}
+  #logo{
+    margin:10px;
+    float:left;
+  }
+.API-padding{
+  padding:0px;
+} 
+  .inner-ul{
+    display:inline;
+  }
+  .nav-selection{
+    overflow: auto;
+  display:block;
+}
+  .nav-selection li{
+   display:inline;
+  }
+  .nav-selection li a{
+    display:inline;
+  }
+  #content{
+  width:100%;
+  position:relative;
+}
+}
+@media screen and (max-width:240px){
+  #logo{
+    margin-right:120px;
+  }
+}
