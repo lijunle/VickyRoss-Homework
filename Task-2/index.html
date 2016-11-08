@@ -1,7 +1,8 @@
 <div class="top"></div>
 <div class="box">
 <nav id="navigation">
-    <img id="logo" src="http://www.node-tap.org/static/tapjs.png">
+  <div class="logo-box">
+    <img id="logo" src="http://www.node-tap.org/static/tapjs.png"/></div>
   <div class="below-nav">
   <p>A Test-Anything-Protocol library for Node.js</p>
   <ul class="nav-selection nopadding-margin">
@@ -27,37 +28,50 @@
 <div id="content">
   <div id="CLI">
     <h2 class="CLI-nomargintop">CLI</h2>
-    <p>You can get help on tap’s command line interface by running <code>tap -h.</code></p>
+    <p>You can get help on tap’s command line interface by running <code>tap -h</code>.</p>
     <p class="nopadding-margin"><code>Usage:</code></p>
     <pre class="nopadding-margin"><code>  tap [options]</code></pre>
-    <p><code>Executes all the files and interprets their output as TAP formatted test result data.</code></p>
-    <p><code>To parse TAP data from stdin, specify "-" as a filename.</code></p>
-    <p><code>Short options are parsed gnu-style, so for example '-bCRspec' would be equivalent to '--bail --no-color --reporter=spec'</code></p>
-    <p><code>If the --check-coverage or --coverage-report options are provided, but no test files are specified, then a coverage report or coverage check will be run on the data from the last test run.</code></p>
-    <p><code>Coverage is never enabled for stdin.</code></p>
-    <p><code>Options:</code></p>
-    <p><code><pre>  -c --color                  Use colors (Default for TTY)</pre></code></p>
-  <p><code><pre>  -C --no-color               Do not use colors (Default for non-TTY)</pre></code></p>
-  <p><code><pre>  -b --bail                   Bail out on first failure</pre></code></p>
- <p><code><pre>  -B --no-bail                Do not bail out on first failure (Default)</pre></code></p> 
-<p><code><pre><xmp>  -R<type> --reporter=<type> Use the specified reporter. Defaults to
+    <pre>Executes all the files and interprets their output as TAP
+formatted test result data.
+
+To parse TAP data from stdin, specify "-" as a filename.
+
+Short options are parsed gnu-style, so for example '-bCRspec' would be
+equivalent to '--bail --no-color --reporter=spec'
+
+If the --check-coverage or --coverage-report options are provided,
+but no test files are specified, then a coverage report or coverage check
+will be run on the data from the last test run.
+    
+Coverage is never enabled for stdin.
+
+Options:</pre>
+    <pre>  -c --color                  Use colors (Default for TTY)</pre>
+  <pre>  -C --no-color               Do not use colors (Default for non-TTY)</pre>
+  <pre>  -b --bail                   Bail out on first failure</pre>
+ <pre>  -B --no-bail                Do not bail out on first failure (Default)</pre> 
+<pre>  -R&lttype&gt --reporter=<type> Use the specified reporter. Defaults to
                               'classic' when colors are in use, or 'tap'
-                              when colors are disabled.</xmp></pre></code></p> 
-<p><code><pre>                              Available reporters: 
+                              when colors are disabled.</pre> 
+<pre>                              Available reporters: 
                               classic doc dot dump json jsonstream
                               landing list markdown min nyan progress
-                              silent spec tap xunit</pre></code></p>
-  <p><code><pre><xmp>  -s<file> --save=<file>      If <file> exists, then it should be a line-
-                              delimited list of test files to run. If
-                              <file> is not present, then all command-line
-                              positional arguments are run.</xmp></pre></code></p>
-<p><code><pre>                              After the set of test files are run, any
+                              silent spec tap xunit</pre>
+  <pre>  -s&ltfile&gt --save=&ltfile&gt      If &ltfile&gt exists, then it should be a line-
+                              delimited list of test files to run.   If
+                              &ltfile&gt is not present, then all command-line
+                              positional arguments are run.</pre>
+<pre>                              After the set of test files are run, any
                               failed test files are written back to the
-                              save file.</pre></code></p>   
-<p><code>Config Files:</p></code> 
-<p><code>You can create a yaml file with any of the options above. By default, the file at ~/.taprc will be loaded, but the TAP_RCFILE environment variable can modify this</p></code>
-<p><code>Run 'tap --dump-config' for a listing of what can be set in that file.
-Each of the keys corresponds to one of the options above.</p></code>
+                              save file.</pre>  
+<pre>Config Files:
+
+You can create a yaml file with any of the options above. By default,
+the file at ~/.taprc will be loaded, but the TAP_RCFILE environment
+variable can modify this.
+
+Run 'tap --dump-config' for a listing of what can be set in that file.
+Each of the keys corresponds to one of the options above.</pre> 
   </div>
 </div>
 </div>
