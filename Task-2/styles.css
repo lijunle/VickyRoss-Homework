@@ -2,12 +2,27 @@ body{
   padding:0;
   margin:0;
 }
-.top{
+html{
+  display: block;
+  border-top: 10px solid #f7df1e;
+}
+html::before{
+  display: block;
+  width:100%;
+  position:fixed;
+  height:10px;
+  background:#f7df1e;
+  content: " ";
+  top:0;
+  z-index:1;
+}
+/*.top{
   position:fixed;
   height:10px;
   background:yellow;
   width:100%;
-}
+  z-index:1;
+}*/
 .box{
   width:800px;
   margin:0 auto;
@@ -17,10 +32,10 @@ body{
 #logo{
   width:100px;
   height:100px;
+  padding:0;
 }
 #navigation{
   width:200px;
-  float:left;
   position:fixed;
 }
 .nopadding-margin{
@@ -36,7 +51,6 @@ body{
 }
 .nav-selection li a{
   display:block;
-  width:100%;
 }
 .code-selection a{
   padding-top:15px;
@@ -52,16 +66,19 @@ body{
 }
 
 @media screen and (max-width:800px){
+  html{
+    padding:0 1em;
+  }
   .box{
   margin:0;
   width:100%;
 }
   #navigation{
   width:100%;
-  position:relative;
+  position:static;
 }
   #logo{
-    margin:10px;
+    margin:0 20px 0 0;
     float:left;
   }
 .API-padding{
@@ -82,11 +99,20 @@ body{
   }
   #content{
   width:100%;
-  position:relative;
+  position:static;
 }
 }
 @media screen and (max-width:240px){
   #logo{
-    margin-right:120px;
+    margin:0 0 20px 0;
+    float:left;
   }
+  .below-nav{
+    clear:left;
+  }
+ 
+  html{
+    padding:0 1em;
+  }
+
 }
