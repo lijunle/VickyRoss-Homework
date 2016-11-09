@@ -1,4 +1,6 @@
-<div class="top"></div>
+<!--第二种实现黄色栏的方法
+<div class="top"></div> 
+-->
 <div class="box">
 <nav id="navigation">
   <div class="logo-box">
@@ -29,9 +31,10 @@
   <div id="CLI">
     <h2 class="CLI-nomargintop">CLI</h2>
     <p>You can get help on tap’s command line interface by running <code>tap -h</code>.</p>
-    <p class="nopadding-margin"><code>Usage:</code></p>
-    <pre class="nopadding-margin"><code>  tap [options]</code></pre>
-    <pre>Executes all the files and interprets their output as TAP
+    <pre>Usage:
+  tap [options]&lt;files&gt;
+   
+Executes all the files and interprets their output as TAP
 formatted test result data.
 
 To parse TAP data from stdin, specify "-" as a filename.
@@ -45,26 +48,34 @@ will be run on the data from the last test run.
     
 Coverage is never enabled for stdin.
 
-Options:</pre>
-    <pre>  -c --color                  Use colors (Default for TTY)</pre>
-  <pre>  -C --no-color               Do not use colors (Default for non-TTY)</pre>
-  <pre>  -b --bail                   Bail out on first failure</pre>
- <pre>  -B --no-bail                Do not bail out on first failure (Default)</pre> 
-<pre>  -R&lttype&gt --reporter=<type> Use the specified reporter. Defaults to
+Options:
+
+  -c --color                  Use colors (Default for TTY)
+  
+  -C --no-color               Do not use colors (Default for non-TTY)
+  
+  -b --bail                   Bail out on first failure
+  -B --no-bail                Do not bail out on first failure (Default)
+  
+  -R&lt;type&gt; --reporter=&lt;type&gt;  Use the specified reporter. Defaults to
                               'classic' when colors are in use, or 'tap'
-                              when colors are disabled.</pre> 
-<pre>                              Available reporters: 
+                              when colors are disabled.
+                              
+                              Available reporters: 
                               classic doc dot dump json jsonstream
                               landing list markdown min nyan progress
-                              silent spec tap xunit</pre>
-  <pre>  -s&ltfile&gt --save=&ltfile&gt      If &ltfile&gt exists, then it should be a line-
+                              silent spec tap xunit
+                              
+  -s&lt;file&gt; --save=&lt;file&gt;      If &lt;file&gt; exists, then it should be a line-
                               delimited list of test files to run.   If
-                              &ltfile&gt is not present, then all command-line
-                              positional arguments are run.</pre>
-<pre>                              After the set of test files are run, any
+                              &lt;file&gt; is not present, then all command-line
+                              positional arguments are run.
+
+                              After the set of test files are run, any
                               failed test files are written back to the
-                              save file.</pre>  
-<pre>Config Files:
+                              save file.
+                              
+Config Files:
 
 You can create a yaml file with any of the options above. By default,
 the file at ~/.taprc will be loaded, but the TAP_RCFILE environment
