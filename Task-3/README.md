@@ -8,6 +8,14 @@
 
 实现主体布局和表单（form）。
 
+### 知识点
+
+- 表单
+
+### 参考资料
+
+- http://www.w3school.com.cn/html/html_forms.asp
+
 ## 要求二
 
 实现表单的响应式布局。
