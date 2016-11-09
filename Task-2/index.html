@@ -1,0 +1,88 @@
+<!--第二种实现黄色栏的方法
+<div class="top"></div> 
+-->
+<div class="box">
+<nav id="navigation">
+  <div class="logo-box">
+    <img id="logo" src="http://www.node-tap.org/static/tapjs.png"/></div>
+  <div class="below-nav">
+  <p>A Test-Anything-Protocol library for Node.js</p>
+  <ul class="nav-selection nopadding-margin">
+    <li><a href="#">Index</a></li>
+    <li><a href="#">Getting Started</a></li>
+    <li><a href="#">API</a>
+      <ul class="API-padding inner-ul">
+        <li><a href="#">Asserts</a></li>
+        <li><a href="#">Promises</a></li>
+        <li><a href="#">Advanced</a></li>
+      </ul>
+    </li>
+    <li><a href="http://s.codepen.io/VickyRoss/debug/ZBYBeO#">CLI</a></li>
+    <li><a href="http://s.codepen.io/VickyRoss/debug/BQyMre">Reporting</a></li>
+    <li><a href="#">Coverage</a></li>
+    <li><a href="#">Change Log</a></li>
+    <li><a href="#">GitHub Repo</a></li>
+     <li><a href="#">GitHub Repo</a></li>
+    </ul>
+    <pre class="code-selection nopadding-margin"><a href="#" class="code-padding"><code>npm install tap</code></a><a href="#" class="code-padding"><code>tap test/*.js</code></a></pre>
+  </div>
+</nav>
+<div id="content">
+  <div id="CLI">
+    <h2 class="CLI-nomargintop">CLI</h2>
+    <p>You can get help on tap’s command line interface by running <code>tap -h</code>.</p>
+    <pre>Usage:
+  tap [options]&lt;files&gt;
+   
+Executes all the files and interprets their output as TAP
+formatted test result data.
+
+To parse TAP data from stdin, specify "-" as a filename.
+
+Short options are parsed gnu-style, so for example '-bCRspec' would be
+equivalent to '--bail --no-color --reporter=spec'
+
+If the --check-coverage or --coverage-report options are provided,
+but no test files are specified, then a coverage report or coverage check
+will be run on the data from the last test run.
+    
+Coverage is never enabled for stdin.
+
+Options:
+
+  -c --color                  Use colors (Default for TTY)
+  
+  -C --no-color               Do not use colors (Default for non-TTY)
+  
+  -b --bail                   Bail out on first failure
+  -B --no-bail                Do not bail out on first failure (Default)
+  
+  -R&lt;type&gt; --reporter=&lt;type&gt;  Use the specified reporter. Defaults to
+                              'classic' when colors are in use, or 'tap'
+                              when colors are disabled.
+                              
+                              Available reporters: 
+                              classic doc dot dump json jsonstream
+                              landing list markdown min nyan progress
+                              silent spec tap xunit
+                              
+  -s&lt;file&gt; --save=&lt;file&gt;      If &lt;file&gt; exists, then it should be a line-
+                              delimited list of test files to run.   If
+                              &lt;file&gt; is not present, then all command-line
+                              positional arguments are run.
+
+                              After the set of test files are run, any
+                              failed test files are written back to the
+                              save file.
+                              
+Config Files:
+
+You can create a yaml file with any of the options above. By default,
+the file at ~/.taprc will be loaded, but the TAP_RCFILE environment
+variable can modify this.
+
+Run 'tap --dump-config' for a listing of what can be set in that file.
+Each of the keys corresponds to one of the options above.</pre> 
+  </div>
+</div>
+</div>
