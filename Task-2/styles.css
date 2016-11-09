@@ -2,10 +2,6 @@ body{
   padding:0;
   margin:0;
 }
-html{
-  display: block;
-  border-top: 10px solid #f7df1e;
-}
 html::before{
   display: block;
   width:100%;
@@ -14,6 +10,7 @@ html::before{
   background:#f7df1e;
   content: " ";
   top:0;
+  left: 0;
   z-index:1;
 }
 /*.top{
@@ -105,14 +102,8 @@ html::before{
 @media screen and (max-width:240px){
   #logo{
     margin:0 0 20px 0;
-    float:left;
   }
   .below-nav{
     clear:left;
   }
- 
-  html{
-    padding:0 1em;
-  }
-
 }
