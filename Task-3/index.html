@@ -1,27 +1,45 @@
-
-<header>
-  <div class="topnav">
-  </div>
-  <div class="logo">
-    
+<header class="topnav">
+  <div class="content">
+    <ul>
+      <li><a href="#">MYUVM</a></li>
+      <li><a href="#">SEARCH</a></li>
+      <li><a href="#">APPLY</a></li>
+    </ul>
   </div>
 </header>
   <div class="content">
       <h3>UVM Self-help Web Guide</h3>
     <div class="side">
-      <a href="#" id="first-a">UVM Self-help Web Guide</a>
-      <a href="#">Get a template/build a website</a>
-      <a href="#">Tools/Enhancements</a>
-      <a href="#">Graphics and Art</a>
-      <a href="#">Analytics/Google Search</a>
-      <a href="#">Web Policies and Style Guide</a>
-      <a href="#">Accessibility</a>
-      <a href="#">Audio and Video</a>
-      <a href="#">Social Media</a>
-      <a href="#">URLs and Redirects</a>
-      <a href="#">Migrating to Mobile/Responsive Design</a>
-      <a href="#">Help and Support</a>
-      <a href="#" id="last-a">Work for Us</a>
+      <ul class="big-a">
+        <div class="leader">
+        <li><a href="#" >UVM Self-help Web Guide</a>
+          <input type="checkbox" id="btu-check">
+          <label class="btu" for="btu-check"></label>
+        </li>
+        </div>
+        <div class="navigation">
+        <li><a href="#">Get a template/build a website</a></li>
+      <li><a href="#">Tools/Enhancements</a></li>
+      <li><a href="#">Graphics and Art</a></li>
+      <li><a href="#">Analytics/Google Search</a></li>
+      <li><a href="#">Web Policies and Style Guide</a></li>
+      <li><a href="#">Accessibility</a></li>
+      <li><a href="#">Audio and Video</a></li>
+      <li><a href="#">Social Media</a></li>
+      <li><a href="#">URLs and Redirects</a></li>
+        <li><a href="#">Migrating to Mobile/Responsive Design</a>
+        <ul class="little-a">
+          <li><a href="#">Making Your UVM Website Responsive</a></li>
+           <li><a href="#">Writing Responsive CSS</a></li>
+          <li><a href="#">Creating Responsive Tables</a></li>
+          <li><a href="#">Adding Responsive Videos</a></li>
+          <li><a href="#">Including Responsive Forms</a></li>
+        </ul>
+        </li>
+      <li><a href="#">Help and Support</a></li>
+     <li><a href="#" >Work for Us</a></li>
+        </div>
+      </ul>
     </div>
     <div class="article">
       <h3 id="including">Including Responsive Forms</h3>
@@ -36,64 +54,70 @@
         <h3>Example Responsive Form</h3>
         <form id="myform">
          <div class="form-div">
-          <label for="name">Full Name</label>
+          <label for="name" class="form-label">Full Name</label>
           <input type="text" name="fname" id="name"/>
           </div>
          
           <div class="form-div">
-        <label for="phone">Phone</label> 
+        <label for="phone" class="form-label">Phone</label> 
           <input type="text" name="phone" id="phone"/>
           </div>
           
           <div class="form-div">
-          <label for="email">Email</label>
+          <label for="email" class="form-label">Email</label>
            <input type="text" name="email" id="email"/>
             </div>
           
           <div class="form-div">
-          <label for="message">Message</label>
-           <textarea id="message" rows=7></textarea>
+            
+          <label for="message" class="form-label">Message</label>
+            
+            <div class="textarea-box">
+          <textarea id="message" rows="7"></textarea>  
+            </div>
           </div>
           
           <div class="form-div">
-            <div class="select-text">
+            <label class="select-text form-label">
             Select a choice:
-              </div>
+              </label>
+            <div class="options">
             <div>
-          <input type="radio"  id="first-choice" checked="checked" name="choice"/> 
-          <label for="first-choice">First Choice</label>
+          <input type="radio"  id="first-radio" checked="checked" name="choice"/> 
+          <label for="first-radio">First Choice</label>
               </div>
           <div>
-          <input type="radio"  id="second-choice" name="choice" /> 
-          <label for="second-choice">Second Choice</label> 
+          <input type="radio"  id="second-radio" name="choice" /> 
+          <label for="second-radio">Second Choice</label> 
             </div>
            <div>
-           <input type="radio"  id="third-choice" name="choice"/> 
-          <label for="third-choice">Third Choice</label>
+           <input type="radio"  id="third-radio" name="choice"/> 
+          <label for="third-radio">Third Choice</label>
           </div>
+            </div>
           </div>
           <div class="form-div">
-            <div class="select-text">
+            <label class="select-text form-label">
               Check all that apply:
-            </div>
-            <div class="select-detial">
+            </label>
+            <div class="options">
        <div>
-          <input type="checkbox"  id="cfirst-choice" /> 
-          <label for="cfirst-choice">First Choice</label>
+          <input type="checkbox"  id="first-checkbox" /> 
+          <label for="first-checkbox">First Choice</label>
           </div>
         <div>
-          <input type="checkbox"  id="csecond-choice" /> 
-          <label for="csecond-choice">Second Choice</label> 
+          <input type="checkbox"  id="second-checkbox" /> 
+          <label for="second-checkbox">Second Choice</label> 
           </div>
         <div>
-          <input type="checkbox"  id="cthird-choice" /> 
-          <label for="cthird-choice">Third Choice</label> 
+          <input type="checkbox"  id="third-checkbox" /> 
+          <label for="third-checkbox">Third Choice</label> 
           </div>
               </div>
           </div>
           
           <div class="form-div">
-            <label>Select a choice:</label>
+            <label class="form-label">Select a choice:</label>
            <select name="choice" id="selection">
           <option value="First Choice">First Choice</option>
           <option value="Second Choice">Second Choice</option>
@@ -109,4 +133,15 @@
     </div>
 
 <footer>
+  <div class="detial-address">
+  <div class="logo">The University of Vermont</div>
+  <div class="address-phone">
+    <span id="address">Burlington, VT 05405</span>
+    <span id="phone"><a href="#">(802) 656-3131</a></span>
+  </div>
+    
+  <div class="contact">
+    <a href="#">Contact UVM</a> © 2016
+  </div>
+  </div>
 </footer>
