@@ -249,3 +249,33 @@ footer .contact a{
   content:" ";
 }
 }
+@media screen and (max-width:600px){
+ .form-label{
+   width:100%;
+   display: block;
+   margin:0 0 5px 0;
+  }
+  .form-div input[type=text]{
+  display:block;
+  width:100%;
+    margin:0;
+}
+ .textarea-box{
+  padding:0;
+  display:block;
+  width:100%;
+}
+  .form-div textarea{
+  width:100%;
+}
+  .options{
+  display:block;
+}
+.form-div input[type=radio] , .form-div input[type=checkbox]{
+  margin:5px 0;
+}
+ #selection{
+  margin:0;
+  width:100%;
+}
+}
