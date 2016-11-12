@@ -25,7 +25,9 @@
 ### 知识点
 
 - 无JavaScript实现菜单（隐藏的checkbox）
+- 动画效果（transition）
 
 ### 参考资料
 
 - https://codepen.io/eduardoboucas/pen/BNyKwO
+- https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions
