@@ -21,3 +21,11 @@
 ## 要求二
 
 实现表单的响应式布局。
+
+### 知识点
+
+- 无JavaScript实现菜单（隐藏的checkbox）
+
+### 参考资料
+
+- https://codepen.io/eduardoboucas/pen/BNyKwO
