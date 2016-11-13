@@ -1,4 +1,20 @@
 # Markdown
 
+在学习 JavaScript 之前，先学习一个非常简单，但是却十分之有用的语言，Markdown。它可以认为是 HTML 的精简版。
+
 - Markdown: http://wowubuntu.com/markdown/
-- GitHub Flavored Markdown: https://dslztx.github.io/blog/2016/06/30/GitHub-Flavored-Markdown%E8%AF%AD%E6%B3%95%E4%BB%8B%E7%BB%8D/
+
+## 要求一
+
+在 GitHub 的评论区，使用 Markdown 语言，编写 [node-tap](http://www.node-tap.org/) 主页的主要介绍。
+
+### 知识点
+
+- Markdown 基本语法
+
+## 要求二
+
+学习 GitHub Flavored Markdown。在评论区，编写 [Boostrap 栅格系统](http://v3.bootcss.com/css/#grid)一节中，“实例”小节之前的内容。
+
+- http://www.jianshu.com/p/cfPxyr
+- https://help.github.com/articles/organizing-information-with-tables/
