@@ -6,30 +6,27 @@
 .topnav ul{
   margin:0;
   padding:0;
+  float:right;
 }
 .topnav li{
   list-style:none;
   display:inline-block; 
-  float:right;
-  right:50px;
+  
 }
 .topnav li a{
   text-decoration:none;
   color:#fff;
   font-weight:bolder;
   background:#000;
-  display:block;
-  height:40px;
-  width:80px;
+  display:inline-block;
   text-align:center;
-  padding:20px 0 0 0;
-  
+  padding:21px 20px;
 }
-.content{
+.container{
   width:1200px;
   margin:0 auto;
 }
-.content>h3{
+.container>h3{
   margin:0;
   border:1px solid silver;
   padding:10px 30px;
@@ -39,28 +36,34 @@
   width:25%;
   float:left;
 }
-.big-a{
+.first-a-box{
+  border:1px solid silver;
+  margin-top:-1px;
+}
+#first-a{
+  text-decoration:none;
+  color:#000;
+  padding:10px 20px;
+  display:inline-block;
+}
+#btn-check{
+  display:none;
+}
+
+.navigation{
   margin:0;
   padding:0;
 }
-.big-a li{
+.navigation>li{
   list-style:none;
-  border-bottom:1px solid silver;
-  border-left:1px solid silver;
-  border-right:1px solid silver;
+  border:1px solid silver;
+  margin-top:-1px;
 }
-
-.big-a li a{
+.navigation li a{
   text-decoration:none;
   color:#000;
   padding:10px 20px;
   display:block;
-}
-.leader li a{
-  display:inline-block;
-}
-#btu-check{
-  display:none;
 }
 .little-a{
   margin:0 15px;
@@ -72,7 +75,6 @@
 .little-a li a{
   padding:10px 0;
 }
-
 .article{
   width:75%;
   float:right;
@@ -179,7 +181,7 @@ footer .contact a{
 }
 
 @media screen and (max-width:1200px){
-  .content{
+  .container{
   width:100%;
   }
   .form-label{
@@ -193,7 +195,7 @@ footer .contact a{
   .article{
   width:100%;
 }
-.btu{
+.btn{
   float:right;
   display:inline-block;
   border-bottom: 4px solid #000;
@@ -201,14 +203,14 @@ footer .contact a{
   cursor:pointer;
   margin: 3px 8px;
 }
-.btu:before{
+.btn:before{
   content: "";
   display:block;
   margin:5px 0;
   width:28px;
   border-bottom:4px solid #000;
 }
-.btu:after{
+.btn:after{
   content: "";
   display:block;
   margin:5px 0;
@@ -216,10 +218,14 @@ footer .contact a{
   border-bottom:4px solid #000;
 }
   .navigation{
-    display:none;
+    max-height: 0;
+    transition: max-height 0.5s ease-out;
+    overflow:hidden;
   }
-  #btu-check:checked ~ .navigation{
-    display:block;
+
+ #btn-check:checked ~ .navigation{
+   max-height: 900px;
+   transition:max-height 0.5s ease-out;
   }
   footer{
     height:90px;
