@@ -12,7 +12,7 @@
 
 ### 参考资料
 
-- Markdown: http://wowubuntu.com/markdown/
+- http://wowubuntu.com/markdown/
 
 ## 要求二
 
