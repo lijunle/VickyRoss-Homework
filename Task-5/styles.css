@@ -2,8 +2,18 @@ body{
   line-height:2;
   font-size:16px;
 }
+p{
+  font-size:1em;
+}
+h1{
+  font-size:1.8em;
+}
 .pager-wapper{
   position:relative;
+}
+abbr[title]{
+  cursor: auto;
+  border-bottom:none;
 }
 .header{
   height:310px;
@@ -13,13 +23,12 @@ body{
 .logo-box{
   float:left;
   width:66.666666667%;
-  height:inherit;
-  color:#fff;
+  height:310px;
 }
 .logo{
-  width:40%;
-  margin:0 auto;
-  padding-top:80px;
+  width:100%;
+  padding: 80px 30% 0 30%;
+  color:#fff;
 }
 .logo h1{
   font-size:42px;
@@ -27,28 +36,31 @@ body{
 .nav-box{
   float:right;
   width:33.33333333%;
-  height:inherit;
+  height:310px;
   background-color:rgba(0,0,0,0.09);
 }
+/*scan组件还有点问题未解决*/
 .scan{
-  position:absolute;
-  top:130px;
-  right:10px;
+  padding: 130px 0.01% 0 17%;
 }
 .scan-button{
   font-size:20px;
   border:none;
   color:#fff;
-  padding:20px 65px;
+  padding:20px 0;
   background:rgba(255,255,255,0.1);
+}
+.scan-button.-right{
+  padding-left:25px;
+  padding-right:25px;
+}
+.scan-button.-left{
+  padding-left:65px;
+  padding-right:65px;
 }
 .scan-button:hover{
   background:rgba(255,255,255,0.2);
 }
-.right-button{
-  padding:20px 25px;
-}
-
 .content{
   width:66.66666667%;
   padding: 50px 5% 50px 10%;
@@ -58,22 +70,66 @@ body{
   padding-right:38%;
   background:rgba(138,188,159,0.5);
 }
+.btn{
+  border:none;
+  font-size: 16px;
+}
+.btn-default{
+  color:#809b7e;
+}
+.btn-default:hover{
+  color:#fff;
+  background:#3d8a9f;
+}
 .sponsor{
   float:left;
-  clear:both;
-  width: 100%; background:0/cover url("http://www.csszengarden.com/214/koi.jpg") no-repeat;
-  
+  width: 100%; 
+  background:0/cover url("http://www.csszengarden.com/214/koi.jpg") no-repeat;
 }
 .sponsor-slogan{
+  padding:130px 0;
+  width:80%;
+  margin:0 auto;
   text-align:center;
-  padding:130px 150px;
-  margin:0;
+  color:rgba(255, 255, 255, 0.4);
+}
+.sponsor-slogan a{
+  font-style: normal;
+  color: rgba(255, 255, 255, 0.7);
 }
 .footer{
   float:left;
   height:150px;
   width: 100%;
   background:#134347;
+  text-align:center;
+}
+.footer a::before{
+  padding:10px 40px 0 40px;
+  display:inline-block;
+  font-family: 'verdemoderna';
+  font-size:72px;
+  font-weight: normal;
+  font-variant: normal;
+  color:rgb(255, 255, 255);
+}
+.footer a:hover::before{
+  color: rgba(255, 255, 255, 0.3);
+}
+#one::before{
+   content: "5";
+}
+#two::before{
+   content: "3";
+}
+#three::before{
+   content: "c";
+}
+#four::before{
+   content: "a";
+}
+#five::before{
+   content: "g";
 }
 .sidebar{
   background:rgba(12,12,12,0.1);
@@ -84,7 +140,6 @@ body{
   top:310px;
 }
 .inside-box{
-  display:block;
   padding:10px 0;
   margin:0 100px;
   border-bottom:1px solid #d9e3dc;
@@ -93,7 +148,7 @@ body{
   color:#607476;
 }
 .inside-box:first-child{
-  padding-top:50px;
+  padding-top:40px;
 }
 .inside-box:last-child{
   padding-bottom:70px;
@@ -102,6 +157,7 @@ body{
 .inside-box a:first-child{
   font-size:19px;
   display:block;
+  text-transform:uppercase;
 }
 .inside-box a:hover{
   text-decoration:none;
@@ -110,18 +166,36 @@ body{
 .resource{
   margin-top:195px;
 }
+@font-face {
+	font-family: 'verdemoderna';	src:url('https://cdn.rawgit.com/mezzoblue/csszengarden.com/master/214/verdemoderna.eot');	src:url('https://cdn.rawgit.com/mezzoblue/csszengarden.com/master/214/verdemoderna.eot?#iefix') format('embedded-opentype'),
+		url('https://cdn.rawgit.com/mezzoblue/csszengarden.com/master/214/verdemoderna.woff') format('woff'),
+		url('https://cdn.rawgit.com/mezzoblue/csszengarden.com/master/214/verdemoderna.ttf') format('truetype'),	url('https://cdn.rawgit.com/mezzoblue/csszengarden.com/master/214/verdemoderna.svg#verdemoderna') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
 @media screen and (max-width:1131px){
+  body{
+    font-size:14px;
+  }
  .header{
   height:280px;
 }
  .logo-box{
   width:100%;
   height:200px;
-  color:#fff;
 }
- .logo{
-  padding-top:40px;
+.logo{
   text-align:center;
+  width:100%;
+  padding-top:40px;
+  padding-left:10%;
+  padding-right:10%
+}
+.logo h1{
+  font-size:38px;
+}
+ .logo h2{
+  font-size:28px;
 }
  .nav-box{
   width:100%;
@@ -132,19 +206,63 @@ body{
   right:0;
   width:100%;
 }
-.scan-button{
+
+.scan-button.-left{
   width:91%;
 }
-.right-button{
+.scan-button.-right{
   width:9%;
 }
- .content,.middle-content{
+ .content{
    width:100%;
-   padding: 50px 5% 50px 10%;
+   padding: 50px 10% 50px 10%;
+  }
+  .sponsor-slogan{
+    padding:70px 0;
+    font-size:28px;
   }
   .sidebar{
   width:100%;
   position:static;
 }
-
+  .inside-box{
+    display:inline-block;
+    width:50%;
+    margin:0;
+    padding:10px 10%;
+  }
+ .inside-box:first-child{
+  padding-top:10px;
+}
+  .inside-box:nth-child(odd){
+    float:left;
+  }
+ .inside-box:last-child{
+  float:none;
+  padding-bottom:10px;
+  border-bottom:1px solid #d9e3dc;
+}
+  .author-composition{
+    background:#3737;
+  }
+  .resource{
+  background:#5676;
+  margin-top:0;
+}
+}
+@media screen and (max-width:600px){
+  .logo h1{
+  font-size:30px;
+}
+ .logo h2{
+  font-size:20px;
+}
+}
+@media screen and (max-width:320px){
+  .logo h1{
+  font-size:25px;
+}
+ .logo h2{
+  font-size:15px;
+}
 }
