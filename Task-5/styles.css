@@ -15,14 +15,20 @@ abbr[title]{
   cursor: auto;
   border-bottom:none;
 }
+a:hover{
+  text-decoration: none;
+}
 .header{
   height:310px;
   width:100%;  
-  background: #2d6360 50% 0/cover  url("http://www.csszengarden.com/214/huntington.jpg") no-repeat;
+  background-image:url("http://www.csszengarden.com/214/contours.png"),url("http://www.csszengarden.com/214/noise.png"),url("http://www.csszengarden.com/214/gridlines.png"),url("http://www.csszengarden.com/214/huntington.jpg");
+  background-position: 0 0, 0 0, -5px -25px, 0 50%;
+  background-size: auto, auto, auto, cover;
+  background-repeat: repeat, repeat, repeat, no-repeat;
 }
-.logo-box{
+.header>.logo-box{
   float:left;
-  width:66.666666667%;
+  width:66.666666666%;
   height:310px;
 }
 .logo{
@@ -33,7 +39,7 @@ abbr[title]{
 .logo h1{
   font-size:42px;
 }
-.nav-box{
+.header>.nav-box{
   float:right;
   width:33.33333333%;
   height:310px;
@@ -41,7 +47,8 @@ abbr[title]{
 }
 /*scan组件还有点问题未解决*/
 .scan{
-  padding: 130px 0.01% 0 17%;
+  padding-top:130px;
+  margin: 0 10px 0 70px;
 }
 .scan-button{
   font-size:20px;
@@ -50,14 +57,13 @@ abbr[title]{
   padding:20px 0;
   background:rgba(255,255,255,0.1);
 }
-.scan-button.-right{
-  padding-left:25px;
-  padding-right:25px;
-}
 .scan-button.-left{
-  padding-left:65px;
-  padding-right:65px;
+  width: 75%;
 }
+.scan-button.-right{
+  width: 25%;
+}
+
 .scan-button:hover{
   background:rgba(255,255,255,0.2);
 }
@@ -84,13 +90,17 @@ abbr[title]{
 .sponsor{
   float:left;
   width: 100%; 
-  background:0/cover url("http://www.csszengarden.com/214/koi.jpg") no-repeat;
+  background-image:url("http://www.csszengarden.com/214/contours.png"),url("http://www.csszengarden.com/214/noise.png"),url("http://www.csszengarden.com/214/gridlines.png"),url("http://www.csszengarden.com/214/koi.jpg");
+  background-position: 0 0, 0 0, -5px -25px, 0 50%;
+  background-size: auto, auto, auto, cover;
+  background-repeat: repeat, repeat, repeat, no-repeat;
 }
 .sponsor-slogan{
   padding:130px 0;
   width:80%;
   margin:0 auto;
   text-align:center;
+  line-height: 1.5;
   color:rgba(255, 255, 255, 0.4);
 }
 .sponsor-slogan a{
@@ -99,19 +109,22 @@ abbr[title]{
 }
 .footer{
   float:left;
-  height:150px;
   width: 100%;
   background:#134347;
   text-align:center;
+  line-height:1.4;
 }
 .footer a::before{
-  padding:10px 40px 0 40px;
-  display:inline-block;
+  padding:0 5%;
   font-family: 'verdemoderna';
   font-size:72px;
   font-weight: normal;
   font-variant: normal;
   color:rgb(255, 255, 255);
+}
+.footer-box{
+  margin-top:20px;
+  margin-bottom:20px;
 }
 .footer a:hover::before{
   color: rgba(255, 255, 255, 0.3);
@@ -160,7 +173,6 @@ abbr[title]{
   text-transform:uppercase;
 }
 .inside-box a:hover{
-  text-decoration:none;
   color:#49968e;
 }
 .resource{
@@ -180,7 +192,7 @@ abbr[title]{
  .header{
   height:280px;
 }
- .logo-box{
+.header>.logo-box{
   width:100%;
   height:200px;
 }
@@ -197,16 +209,19 @@ abbr[title]{
  .logo h2{
   font-size:28px;
 }
- .nav-box{
+ .header>.nav-box{
   width:100%;
   height:80px;
 }
 .scan{
-  top:200px;
-  right:0;
   width:100%;
+  padding-top:0;
+  margin:0;
 }
-
+.scan-button{
+  font-size:16px;
+  padding: 24px 0;
+}
 .scan-button.-left{
   width:91%;
 }
@@ -221,34 +236,50 @@ abbr[title]{
     padding:70px 0;
     font-size:28px;
   }
-  .sidebar{
+.footer a::before{
+  padding:0 3%;
+  font-size:58px;
+}
+.sidebar{
   width:100%;
   position:static;
+  background: #edf4f0;
 }
   .inside-box{
+    float:left;
     display:inline-block;
     width:50%;
     margin:0;
     padding:10px 10%;
+    border-top:1px solid #d9e3dc;
+    border-bottom:none;
   }
  .inside-box:first-child{
   padding-top:10px;
 }
   .inside-box:nth-child(odd){
-    float:left;
+    clear:left;
   }
  .inside-box:last-child{
   float:none;
   padding-bottom:10px;
-  border-bottom:1px solid #d9e3dc;
 }
-  .author-composition{
-    background:#3737;
+ .resource .inside-box:last-child{
+  width:100%;
+  }
+
+  .inside-box a:first-child{
+  font-size:17px;
+}
+  .inside-box a:nth-child(2){
+    font-size:15px;
   }
   .resource{
-  background:#5676;
-  margin-top:0;
-}
+    margin-top:0;
+    background-color: rgba(138,188,159,0.5);
+    background-image:url("http://www.csszengarden.com/214/bamboo.png");
+  }
+  
 }
 @media screen and (max-width:600px){
   .logo h1{
@@ -258,6 +289,18 @@ abbr[title]{
   font-size:20px;
 }
 }
+@media screen and (max-width:500px){
+ .footer a::before{
+  padding:0 2%;
+  font-size:38px;
+}
+  .sponsor-slogan{
+    padding:30px 0;
+  }
+  .inside-box{
+    padding:10px 5%;
+  }
+}
 @media screen and (max-width:320px){
   .logo h1{
   font-size:25px;
@@ -265,4 +308,10 @@ abbr[title]{
  .logo h2{
   font-size:15px;
 }
+  .sponsor-slogan{
+    font-size:20px;
+  }
+  .inside-box{
+    width:100%;
+  }
 }
