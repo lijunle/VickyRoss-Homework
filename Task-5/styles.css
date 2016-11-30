@@ -1,317 +1,389 @@
-body{
-  line-height:2;
-  font-size:16px;
+body {
+  line-height: 2;
 }
 p{
-  font-size:1em;
+  font-size: 16px;
 }
-h1{
-  font-size:1.8em;
+@media screen and (max-width:1131px) {
+  h1{
+    font-size:28px;
+  }
+  p{
+    font-size:14px;
+  }
 }
-.pager-wapper{
-  position:relative;
+.pager-wapper {
+  position: relative;
 }
-abbr[title]{
+abbr[title] {
+  border-bottom: none;
   cursor: auto;
-  border-bottom:none;
 }
-a:hover{
-  text-decoration: none;
-}
-.header{
-  height:310px;
-  width:100%;  
-  background-image:url("http://www.csszengarden.com/214/contours.png"),url("http://www.csszengarden.com/214/noise.png"),url("http://www.csszengarden.com/214/gridlines.png"),url("http://www.csszengarden.com/214/huntington.jpg");
+
+.header {
+  height: 310px;
+  width: 100%;  
+  background-image: url("http://www.csszengarden.com/214/contours.png"),url("http://www.csszengarden.com/214/noise.png"),url("http://www.csszengarden.com/214/gridlines.png"),url("http://www.csszengarden.com/214/huntington.jpg");
   background-position: 0 0, 0 0, -5px -25px, 0 50%;
   background-size: auto, auto, auto, cover;
   background-repeat: repeat, repeat, repeat, no-repeat;
 }
-.header>.logo-box{
-  float:left;
-  width:66.666666666%;
-  height:310px;
+@media screen and (max-width:1131px) {
+  .header {
+  height: 280px;
 }
-.logo{
-  width:100%;
+}
+
+.logo-box {
+  float: left;
+  width: 66.666666666%;
+  height: 310px;
+}
+/*logo组件*/
+.logo {
+  width: 100%;
   padding: 80px 30% 0 30%;
-  color:#fff;
+  color: #fff;
 }
-.logo h1{
-  font-size:42px;
+/*logo子组件*/
+.logo>.title {
+  font-size: 42px;
 }
-.header>.nav-box{
-  float:right;
-  width:33.33333333%;
-  height:310px;
-  background-color:rgba(0,0,0,0.09);
+@media screen and (max-width:1131px) {
+  .logo-box {
+  width: 100%;
+  height: 200px;
 }
-/*scan组件还有点问题未解决*/
-.scan{
-  padding-top:130px;
+  .logo {
+  width: 100%;
+  padding-top: 40px;
+  padding-left: 10%;
+  padding-right: 10%;
+  text-align: center;
+}
+.logo>.title {
+  font-size: 38px;
+}
+.logo>.subtitle {
+  font-size: 28px;
+}
+}
+@media screen and (max-width:600px)
+{
+ .logo>.title {
+  font-size: 30px;
+}
+ .logo>.subtitle {
+  font-size: 20px;
+}
+}
+@media screen and (max-width:320px) {
+  .logo>.title {
+  font-size: 25px;
+}
+ .logo>.subtitle {
+  font-size: 15px;
+}
+}
+.nav-box {
+  float: right;
+  width: 33.33333333%;
+  height: 310px;
+  background-color: rgba(0,0,0,.09);
+}
+
+/*scan组件*/
+.scan {
+  padding-top: 130px;
   margin: 0 10px 0 70px;
 }
-.scan-button{
-  font-size:20px;
-  border:none;
-  color:#fff;
-  padding:20px 0;
-  background:rgba(255,255,255,0.1);
+/*scan子组件*/
+.scan>.scan-button {
+  border: none;
+  padding: 20px 0;
+  font-size: 20px;
+  background: rgba(255,255,255,.1);
+  color: #fff;
 }
-.scan-button.-left{
+/*scan子组件*/
+.scan>.scan-button.-left {
   width: 75%;
 }
-.scan-button.-right{
+/*scan子组件*/
+.scan>.scan-button.-right {
   width: 25%;
 }
 
-.scan-button:hover{
-  background:rgba(255,255,255,0.2);
+.scan>.scan-button:hover {
+  background: rgba(255,255,255,.2);
 }
-.content{
-  width:66.66666667%;
-  padding: 50px 5% 50px 10%;
+@media screen and (max-width:1131px) {
+  .nav-box {
+  width: 100%;
+  height: 80px;
 }
-.middle-content{
-  width:100%;
-  padding-right:38%;
-  background:rgba(138,188,159,0.5);
+.scan {
+  width: 100%;
+  padding-top: 0;
+  margin: 0;
 }
-.btn{
-  border:none;
+.scan>.scan-button {
+  padding: 24px 0;
   font-size: 16px;
 }
-.btn-default{
-  color:#809b7e;
+.scan>.scan-button.-left {
+  width: 91%;
 }
-.btn-default:hover{
-  color:#fff;
-  background:#3d8a9f;
+.scan>.scan-button.-right {
+  width: 9%;
 }
-.sponsor{
-  float:left;
+}
+/*content元素*/
+.content-box>.content {
+  width: 66.66666667%;
+  padding: 50px 5% 50px 10%;
+}
+/*content变形*/
+.content-box>.content.-middle {
+  width: 100%;
+  padding-right: 38%;
+  background: rgba(138,188,159,.5);
+}
+@media screen and (max-width:1131px) {
+.content-box>.content {
+   width: 100%;
+   padding: 50px 10% 50px 10%;
+  }
+.content-box>.content.-middle {
+  padding-right: 10%;
+  background: rgba(138,188,159,.5);
+}
+}
+.btn {
+  border: none;
+  font-size: 16px;
+}
+.btn-default {
+  color: #809b7e;
+}
+.btn-default:hover {
+  color: #fff;
+  background: #3d8a9f;
+}
+
+/*sponsor组件*/
+.sponsor {
+  float: left;
   width: 100%; 
-  background-image:url("http://www.csszengarden.com/214/contours.png"),url("http://www.csszengarden.com/214/noise.png"),url("http://www.csszengarden.com/214/gridlines.png"),url("http://www.csszengarden.com/214/koi.jpg");
+  background-image: url("http://www.csszengarden.com/214/contours.png"),url("http://www.csszengarden.com/214/noise.png"),url("http://www.csszengarden.com/214/gridlines.png"),url("http://www.csszengarden.com/214/koi.jpg");
   background-position: 0 0, 0 0, -5px -25px, 0 50%;
   background-size: auto, auto, auto, cover;
   background-repeat: repeat, repeat, repeat, no-repeat;
 }
-.sponsor-slogan{
-  padding:130px 0;
-  width:80%;
-  margin:0 auto;
-  text-align:center;
+
+/*sponsor元素*/
+.sponsor>.sponsor-slogan {
+  padding: 130px 0;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
   line-height: 1.5;
-  color:rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, .4);
 }
-.sponsor-slogan a{
+@media screen and (max-width:1131px) {
+  .sponsor {
+    float: none;
+  }
+  .sponsor>.sponsor-slogan {
+    padding: 70px 0;
+    font-size: 28px;
+  }
+}
+@media screen and (max-width:500px) {
+  .sponsor>.sponsor-slogan {
+    padding: 30px 0;
+  }
+}
+@media screen and (max-width:320px) {
+  .sponsor>.sponsor-slogan {
+    font-size: 20px;
+  }
+}
+
+.sponsor-slogan a {
   font-style: normal;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, .7);
 }
-.footer{
-  float:left;
+
+.footer {
+  float: left;
   width: 100%;
-  background:#134347;
-  text-align:center;
-  line-height:1.4;
+  text-align: center;
+  line-height: 1.4;
+  background: #134347;
 }
-.footer a::before{
-  padding:0 5%;
+
+.footer a:hover{
+  text-decoration:none;
+}
+/*footer元素*/
+.footer a::before {
+  padding: 0 5%;
   font-family: 'verdemoderna';
-  font-size:72px;
+  font-size: 72px;
   font-weight: normal;
   font-variant: normal;
-  color:rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
 }
-.footer-box{
-  margin-top:20px;
-  margin-bottom:20px;
+@media screen and (max-width:1131px) {
+  .footer a::before {
+  padding: 0 3%;
+  font-size: 58px;
 }
-.footer a:hover::before{
-  color: rgba(255, 255, 255, 0.3);
+  .footer {
+  float: none;
+  }
 }
-#one::before{
+@media screen and (max-width:500px) {
+ .footer a::before {
+  padding: 0 2%;
+  font-size: 38px;
+}
+}
+.footer-box {
+  padding: 20px 0;
+}
+
+.footer a:hover::before {
+  color: rgba(255, 255, 255, .5);
+}
+
+
+/*footer元素*/
+#one::before {
    content: "5";
 }
-#two::before{
+/*footer元素*/
+#two::before {
    content: "3";
 }
-#three::before{
+/*footer元素*/
+#three::before {
    content: "c";
 }
-#four::before{
+/*footer元素*/
+#four::before {
    content: "a";
 }
-#five::before{
+/*footer元素*/
+#five::before {
    content: "g";
 }
-.sidebar{
-  background:rgba(12,12,12,0.1);
-  position:absolute;
-  width:33.3333333%;
-  right:0;
-  bottom:0;
-  top:310px;
+/*sidebar组件*/
+.sidebar {
+  background: rgba(12,12,12,.1);
+  position: absolute;
+  width: 33.3333333%;
+  right: 0;
+  bottom: 0;
+  top: 310px;
 }
-.inside-box{
-  padding:10px 0;
-  margin:0 100px;
-  border-bottom:1px solid #d9e3dc;
+
+/*sidebar元素*/
+.sidebar>*>.inside-box {
+  padding: 10px 0;
+  margin: 0 100px;
+  border-bottom: 1px solid #d9e3dc;
 }
-.inside-box a{
-  color:#607476;
+
+
+.sidebar>*>.inside-box:first-child {
+  padding-top: 40px;
 }
-.inside-box:first-child{
-  padding-top:40px;
+.sidebar>*>.inside-box:last-child{
+  padding-bottom: 70px;
+  border-bottom: none;
 }
-.inside-box:last-child{
-  padding-bottom:70px;
-  border-bottom:none;
+.sidebar>*>.inside-box a {
+  color: #607476;
 }
-.inside-box a:first-child{
-  font-size:19px;
-  display:block;
-  text-transform:uppercase;
+.sidebar>*>.inside-box a:hover{
+  color: #49968e;
+  text-decoration:none;
 }
-.inside-box a:hover{
-  color:#49968e;
+.sidebar>*>.inside-box a:first-child{
+  display: block;
+  font-size: 19px;
+  text-transform: uppercase;
 }
+
 .resource{
-  margin-top:195px;
+  margin-top: 195px;
+}
+@media screen and (max-width:1131px) {
+  .sidebar {
+  position: static;
+  width: 100%;
+  background: #edf4f0;
+}
+ .sidebar>*>.inside-box {
+    float: left;
+    display: inline-block;
+    width: 50%;
+    margin: 0;
+    padding: 10px 10%;
+    border-top: 1px solid #d9e3dc;
+    border-bottom: none;
+  }
+ .sidebar>*>.inside-box:first-child {
+  padding-top: 10px;
+}
+ .sidebar>*>.inside-box:nth-child(odd) { 
+    clear: left;
+  } 
+ .sidebar>*>.inside-box:last-child {
+  float: none;
+  padding-bottom: 10px;
+}
+ .resource .inside-box:last-child {
+  width: 100%;
+  }
+ .sidebar>*>.inside-box a:first-child {
+  font-size: 17px;
+}
+ .sidebar>*>.inside-box a:nth-child(2) {
+    font-size: 15px;
+  }
+  .composition:after{
+    clear:both;
+    content:".";
+    display:block;
+    width:0;
+    height:0;
+    visibility:hidden;
+  }
+  .resource {
+    margin-top: 0;
+    background-color: rgba(138,188,159,0.5);
+    background-image: url("http://www.csszengarden.com/214/bamboo.png");
+  }
+}
+@media screen and (max-width:500px) {
+  .sidebar>*>.inside-box {
+    padding: 10px 5%;
+  }
+}
+@media screen and (max-width:320px) {
+  .sidebar>*>.inside-box {
+    width: 100%;
+  }
 }
 @font-face {
-	font-family: 'verdemoderna';	src:url('https://cdn.rawgit.com/mezzoblue/csszengarden.com/master/214/verdemoderna.eot');	src:url('https://cdn.rawgit.com/mezzoblue/csszengarden.com/master/214/verdemoderna.eot?#iefix') format('embedded-opentype'),
+	font-family: 'verdemoderna';	
+  src: url('https://cdn.rawgit.com/mezzoblue/csszengarden.com/master/214/verdemoderna.eot');
+  src: url('https://cdn.rawgit.com/mezzoblue/csszengarden.com/master/214/verdemoderna.eot?#iefix') format('embedded-opentype'),
 		url('https://cdn.rawgit.com/mezzoblue/csszengarden.com/master/214/verdemoderna.woff') format('woff'),
 		url('https://cdn.rawgit.com/mezzoblue/csszengarden.com/master/214/verdemoderna.ttf') format('truetype'),	url('https://cdn.rawgit.com/mezzoblue/csszengarden.com/master/214/verdemoderna.svg#verdemoderna') format('svg');
 	font-weight: normal;
 	font-style: normal;
-}
-@media screen and (max-width:1131px){
-  body{
-    font-size:14px;
-  }
- .header{
-  height:280px;
-}
-.header>.logo-box{
-  width:100%;
-  height:200px;
-}
-.logo{
-  text-align:center;
-  width:100%;
-  padding-top:40px;
-  padding-left:10%;
-  padding-right:10%
-}
-.logo h1{
-  font-size:38px;
-}
- .logo h2{
-  font-size:28px;
-}
- .header>.nav-box{
-  width:100%;
-  height:80px;
-}
-.scan{
-  width:100%;
-  padding-top:0;
-  margin:0;
-}
-.scan-button{
-  font-size:16px;
-  padding: 24px 0;
-}
-.scan-button.-left{
-  width:91%;
-}
-.scan-button.-right{
-  width:9%;
-}
- .content{
-   width:100%;
-   padding: 50px 10% 50px 10%;
-  }
-  .sponsor-slogan{
-    padding:70px 0;
-    font-size:28px;
-  }
-.footer a::before{
-  padding:0 3%;
-  font-size:58px;
-}
-.sidebar{
-  width:100%;
-  position:static;
-  background: #edf4f0;
-}
-  .inside-box{
-    float:left;
-    display:inline-block;
-    width:50%;
-    margin:0;
-    padding:10px 10%;
-    border-top:1px solid #d9e3dc;
-    border-bottom:none;
-  }
- .inside-box:first-child{
-  padding-top:10px;
-}
-  .inside-box:nth-child(odd){
-    clear:left;
-  }
- .inside-box:last-child{
-  float:none;
-  padding-bottom:10px;
-}
- .resource .inside-box:last-child{
-  width:100%;
-  }
-
-  .inside-box a:first-child{
-  font-size:17px;
-}
-  .inside-box a:nth-child(2){
-    font-size:15px;
-  }
-  .resource{
-    margin-top:0;
-    background-color: rgba(138,188,159,0.5);
-    background-image:url("http://www.csszengarden.com/214/bamboo.png");
-  }
-  
-}
-@media screen and (max-width:600px){
-  .logo h1{
-  font-size:30px;
-}
- .logo h2{
-  font-size:20px;
-}
-}
-@media screen and (max-width:500px){
- .footer a::before{
-  padding:0 2%;
-  font-size:38px;
-}
-  .sponsor-slogan{
-    padding:30px 0;
-  }
-  .inside-box{
-    padding:10px 5%;
-  }
-}
-@media screen and (max-width:320px){
-  .logo h1{
-  font-size:25px;
-}
- .logo h2{
-  font-size:15px;
-}
-  .sponsor-slogan{
-    font-size:20px;
-  }
-  .inside-box{
-    width:100%;
-  }
 }
