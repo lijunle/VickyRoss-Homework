@@ -29,12 +29,6 @@ abbr[title] {
   background-size: auto, auto, auto, cover;
   background-repeat: repeat, repeat, repeat, no-repeat;
 }
-@media screen and (max-width:1131px) {
-  .header {
-  height: 280px;
-}
-}
-
 /*header组件的元素*/
 .logo-box {
   float: left;
@@ -49,8 +43,12 @@ abbr[title] {
   height: 310px;
   background-color: rgba(0,0,0,.09);
 }
+
 @media screen and (max-width:1131px) {
-  .logo-box {
+  .header {
+  height: 280px;
+}
+    .logo-box {
   width: 100%;
   height: 200px;
 }
@@ -59,6 +57,7 @@ abbr[title] {
   height: 80px;
 }
 }
+
 /*logo组件*/
 .logo {
   width: 100%;
@@ -341,14 +340,13 @@ abbr[title] {
     border-top: 1px solid #d9e3dc;
     border-bottom: none;
   }
- .sidebar>*>.inside-box:first-child {
+ .sidebar>.composition>.inside-box:first-child {
   padding-top: 10px;
 }
  .sidebar>*>.inside-box:nth-child(odd) { 
     clear: left;
   } 
  .sidebar>*>.inside-box:last-child {
-  float: none;
   padding-bottom: 10px;
 }
  .resource .inside-box:last-child {
@@ -367,6 +365,9 @@ abbr[title] {
     width:0;
     height:0;
     visibility:hidden;
+  }
+  .sidebar>.resource>.inside-box:last-child {
+  float: none;
   }
   .resource {
     margin-top: 0;
