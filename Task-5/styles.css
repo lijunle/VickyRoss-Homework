@@ -20,6 +20,7 @@ abbr[title] {
   cursor: auto;
 }
 
+/*header组件*/
 .header {
   height: 310px;
   width: 100%;  
@@ -34,10 +35,29 @@ abbr[title] {
 }
 }
 
+/*header组件的元素*/
 .logo-box {
   float: left;
   width: 66.666666666%;
   height: 310px;
+}
+
+/*header组件的元素*/
+.nav-box {
+  float: right;
+  width: 33.33333333%;
+  height: 310px;
+  background-color: rgba(0,0,0,.09);
+}
+@media screen and (max-width:1131px) {
+  .logo-box {
+  width: 100%;
+  height: 200px;
+}
+  .nav-box {
+  width: 100%;
+  height: 80px;
+}
 }
 /*logo组件*/
 .logo {
@@ -45,15 +65,11 @@ abbr[title] {
   padding: 80px 30% 0 30%;
   color: #fff;
 }
-/*logo子组件*/
+/*logo组件的元素*/
 .logo>.title {
   font-size: 42px;
 }
 @media screen and (max-width:1131px) {
-  .logo-box {
-  width: 100%;
-  height: 200px;
-}
   .logo {
   width: 100%;
   padding-top: 40px;
@@ -85,19 +101,13 @@ abbr[title] {
   font-size: 15px;
 }
 }
-.nav-box {
-  float: right;
-  width: 33.33333333%;
-  height: 310px;
-  background-color: rgba(0,0,0,.09);
-}
 
 /*scan组件*/
 .scan {
   padding-top: 130px;
   margin: 0 10px 0 70px;
 }
-/*scan子组件*/
+/*scan组件的元素*/
 .scan>.scan-button {
   border: none;
   padding: 20px 0;
@@ -105,11 +115,11 @@ abbr[title] {
   background: rgba(255,255,255,.1);
   color: #fff;
 }
-/*scan子组件*/
+/*scan组件元素的变形*/
 .scan>.scan-button.-left {
   width: 75%;
 }
-/*scan子组件*/
+/*scan组件元素的变形*/
 .scan>.scan-button.-right {
   width: 25%;
 }
@@ -118,10 +128,6 @@ abbr[title] {
   background: rgba(255,255,255,.2);
 }
 @media screen and (max-width:1131px) {
-  .nav-box {
-  width: 100%;
-  height: 80px;
-}
 .scan {
   width: 100%;
   padding-top: 0;
@@ -143,7 +149,7 @@ abbr[title] {
   width: 66.66666667%;
   padding: 50px 5% 50px 10%;
 }
-/*content变形*/
+/*content元素的变形*/
 .content-box>.content.-middle {
   width: 100%;
   padding-right: 38%;
