@@ -15,7 +15,7 @@ Bootstrap 提供了一套响应式、移动设备优先的流式栅格系统，�
 * The negative margin is why the examples below are outdented. It's so that content within grid columns is lined up with non-grid content.
 * Grid columns are created by specifying the number of twelve available columns you wish to span.For example, three equal columns would use three `.col-xs-4`.
 * 如果一“行（row）”中包含了的“列（column）”大于 12，多余的“列（column）”所在的元素将被作为一个整体另起一行排列。
-* rid classes apply to devices with screen widths greater than or equal to the breakpoint sizes, and override grid classes targeted at smaller devices. Therefore, applying any `.col-md-` class to an element will not only affect its styling on medium devices but also on large devices if a `.col-lg-` class is not present.
+* Grid classes apply to devices with screen widths greater than or equal to the breakpoint sizes, and override grid classes targeted at smaller devices. Therefore, applying any `.col-md-` class to an element will not only affect its styling on medium devices but also on large devices if a `.col-lg-` class is not present.
 
 通过研究后面的实例，可以将这些原理应用到你的代码中。
 
