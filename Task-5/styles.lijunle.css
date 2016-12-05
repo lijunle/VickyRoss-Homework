@@ -1,0 +1,400 @@
+/*** 全局 ************************************/
+@font-face {
+  font-family: 'verdemoderna';
+  font-weight: normal;
+  font-style: normal;
+  src:
+    url('https://cdn.rawgit.com/mezzoblue/csszengarden.com/master/214/verdemoderna.eot'),
+    url('https://cdn.rawgit.com/mezzoblue/csszengarden.com/master/214/verdemoderna.eot?#iefix') format('embedded-opentype'),
+    url('https://cdn.rawgit.com/mezzoblue/csszengarden.com/master/214/verdemoderna.woff') format('woff'),
+    url('https://cdn.rawgit.com/mezzoblue/csszengarden.com/master/214/verdemoderna.ttf') format('truetype'),	url('https://cdn.rawgit.com/mezzoblue/csszengarden.com/master/214/verdemoderna.svg#verdemoderna') format('svg');
+}
+body {
+  line-height: 2;
+}
+p{
+  font-size: 16px;
+}
+abbr[title] {
+  border-bottom: none;
+  cursor: auto;
+}
+@media screen and (max-width:1131px) {
+  h1{
+    font-size:28px;
+  }
+  p{
+    font-size:14px;
+  }
+}
+
+/*** 整体布局 ***************************************/
+.pager-wapper {
+  position: relative;
+}
+.pager-wapper > .header {
+  width: 100%;
+}
+.pager-wapper > .content-box > .content {
+  width: 66.66666667%;
+}
+.pager-wapper > .sidebar {
+  position: absolute;
+  width: 33.3333333%;
+  right: 0;
+  bottom: 0;
+  top: 310px;
+}
+.pager-wapper > .sponsor {
+  float: left;
+  width: 100%;
+}
+.pager-wapper > .footer {
+  float: left;
+  width: 100%;
+}
+@media screen and (max-width:1131px) {
+  .pager-wapper > .content-box > .content {
+    width: 100%;
+  }
+  .sidebar {
+    position: static;
+    width: 100%;
+  }
+  .pager-wapper > .sponsor {
+    float: none;
+  }
+  .pager-wapper > .footer {
+    float: none;
+  }
+}
+
+/*** header组件 **********************************/
+.header {
+  height: 310px;
+  background-image: url("http://www.csszengarden.com/214/contours.png"),url("http://www.csszengarden.com/214/noise.png"),url("http://www.csszengarden.com/214/gridlines.png"),url("http://www.csszengarden.com/214/huntington.jpg");
+  background-position: 0 0, 0 0, -5px -25px, 0 50%;
+  background-size: auto, auto, auto, cover;
+  background-repeat: repeat, repeat, repeat, no-repeat;
+}
+.header > .logo-box {
+  float: left;
+  width: 66.666666666%;
+  height: 310px;
+}
+.header > .nav-box {
+  float: right;
+  width: 33.33333333%;
+  height: 310px;
+  background-color: rgba(0,0,0,.09);
+}
+
+@media screen and (max-width:1131px) {
+  .header {
+    height: 280px;
+  }
+  .header > .logo-box {
+    width: 100%;
+    height: 200px;
+  }
+  .header > .nav-box {
+    width: 100%;
+    height: 80px;
+  }
+}
+
+/*** logo组件 ******************************************/
+.logo {
+  width: 100%;
+  padding: 80px 30% 0 30%;
+  color: #fff;
+}
+.logo > .title {
+  font-size: 42px;
+}
+@media screen and (max-width:1131px) {
+  .logo {
+    width: 100%;
+    padding-top: 40px;
+    padding-left: 10%;
+    padding-right: 10%;
+    text-align: center;
+  }
+  .logo > .title {
+    font-size: 38px;
+  }
+  .logo > .subtitle {
+    font-size: 28px;
+  }
+}
+@media screen and (max-width:600px) {
+  .logo > .title {
+    font-size: 30px;
+  }
+  .logo > .subtitle {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width:320px) {
+  .logo > .title {
+    font-size: 25px;
+  }
+  .logo > .subtitle {
+    font-size: 15px;
+  }
+}
+
+/*** scan组件 **********************************************/
+.scan {
+  padding-top: 130px;
+  margin: 0 10px 0 70px;
+}
+.scan > .scan-button {
+  border: none;
+  padding: 20px 0;
+  font-size: 20px;
+  background: rgba(255,255,255,.1);
+  color: #fff;
+}
+.scan > .scan-button.-left {
+  width: 75%;
+}
+.scan > .scan-button.-right {
+  width: 25%;
+}
+.scan > .scan-button:hover {
+  background: rgba(255,255,255,.2);
+}
+@media screen and (max-width:1131px) {
+  .scan {
+    width: 100%;
+    padding-top: 0;
+    margin: 0;
+  }
+  .scan > .scan-button {
+    padding: 24px 0;
+    font-size: 16px;
+  }
+  .scan > .scan-button.-left {
+    width: 91%;
+  }
+  .scan > .scan-button.-right {
+    width: 9%;
+  }
+}
+
+/*** content元素 *****************************************/
+.content-box > .content {
+  padding: 50px 5% 50px 10%;
+}
+.content-box > .content.-middle {
+  width: 100%;
+  padding-right: 38%;
+  background: rgba(138,188,159,.5);
+}
+@media screen and (max-width:1131px) {
+  .content-box > .content {
+    padding: 50px 10% 50px 10%;
+  }
+  .content-box > .content.-middle {
+    padding-right: 10%;
+    background: rgba(138,188,159,.5);
+  }
+}
+
+/*** content内的按钮 **********************************/
+.btn {
+  border: none;
+  font-size: 16px;
+}
+.btn-default {
+  color: #809b7e;
+}
+.btn-default:hover {
+  color: #fff;
+  background: #3d8a9f;
+}
+
+/*** sponsor组件 ****************************************/
+.sponsor {
+  background-image: url("http://www.csszengarden.com/214/contours.png"),url("http://www.csszengarden.com/214/noise.png"),url("http://www.csszengarden.com/214/gridlines.png"),url("http://www.csszengarden.com/214/koi.jpg");
+  background-position: 0 0, 0 0, -5px -25px, 0 50%;
+  background-size: auto, auto, auto, cover;
+  background-repeat: repeat, repeat, repeat, no-repeat;
+}
+.sponsor > .sponsor-slogan {
+  padding: 130px 0;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, .4);
+}
+.sponsor > .sponsor-slogan a {
+  font-style: normal;
+  color: rgba(255, 255, 255, .7);
+}
+@media screen and (max-width:1131px) {
+  .sponsor > .sponsor-slogan {
+    padding: 70px 0;
+    font-size: 28px;
+  }
+}
+@media screen and (max-width:500px) {
+  .sponsor > .sponsor-slogan {
+    padding: 30px 0;
+  }
+}
+@media screen and (max-width:320px) {
+  .sponsor > .sponsor-slogan {
+    font-size: 20px;
+  }
+}
+
+/*** footer *****************************************************/
+.footer {
+  text-align: center;
+  line-height: 1.4;
+  background: #134347;
+}
+.footer > .footer-box {
+  padding: 20px 0;
+}
+.footer > .footer-box > a:hover {
+  text-decoration:none;
+}
+.footer > .footer-box > a::before {
+  padding: 0 5%;
+  font-family: 'verdemoderna';
+  font-size: 72px;
+  font-weight: normal;
+  font-variant: normal;
+  color: rgb(255, 255, 255);
+}
+.footer > .footer-box > a:hover::before {
+  color: rgba(255, 255, 255, .5);
+}
+@media screen and (max-width:1131px) {
+  .footer a::before {
+    padding: 0 3%;
+    font-size: 58px;
+  }
+}
+@media screen and (max-width:500px) {
+  .footer a::before {
+    padding: 0 2%;
+    font-size: 38px;
+  }
+}
+
+/*footer元素*/
+.footer-box > #one::before {
+   content: "5";
+}
+/*footer元素*/
+.footer-box > #two::before {
+   content: "3";
+}
+/*footer元素*/
+.footer-box > #three::before {
+   content: "c";
+}
+/*footer元素*/
+.footer-box > #four::before {
+   content: "a";
+}
+/*footer元素*/
+.footer-box > #five::before {
+   content: "g";
+}
+
+/*** sidebar组件 ********************************************/
+.sidebar {
+  background: rgba(12,12,12,.1);
+}
+.sidebar > * > .inside-box {
+  padding: 10px 0;
+  margin: 0 100px;
+  border-bottom: 1px solid #d9e3dc;
+}
+.sidebar > * > .inside-box:first-child {
+  padding-top: 40px;
+}
+.sidebar > * > .inside-box:last-child{
+  padding-bottom: 70px;
+  border-bottom: none;
+}
+.sidebar > * > .inside-box a {
+  color: #607476;
+}
+.sidebar > * > .inside-box a:hover{
+  color: #49968e;
+  text-decoration:none;
+}
+.sidebar > * > .inside-box a:first-child{
+  display: block;
+  font-size: 19px;
+  text-transform: uppercase;
+}
+.sidebar > .resource {
+  margin-top: 195px;
+}
+@media screen and (max-width:1131px) {
+  .sidebar {
+    position: static;
+    width: 100%;
+    background: #edf4f0;
+  }
+  .sidebar > * > .inside-box {
+    display: inline-block;
+    width: 50%;
+    margin: 0;
+    padding: 10px 10%;
+    border-top: 1px solid #d9e3dc;
+    border-bottom: none;
+  }
+  .sidebar > .composition > .inside-box:first-child {
+    padding-top: 10px;
+  }
+  .sidebar > * > .inside-box:nth-child(odd) {
+    clear: left;
+  }
+  .sidebar > * > .inside-box:last-child {
+    padding-bottom: 10px;
+  }
+  .sidebar > * > .inside-box a:first-child {
+    font-size: 17px;
+  }
+  .sidebar > * > .inside-box a:nth-child(2) {
+    font-size: 15px;
+  }
+  .sidebar > .composition:after {
+    clear:both;
+    content:".";
+    display:block;
+    width:0;
+    height:0;
+    visibility:hidden;
+  }
+  .sidebar > .resource > .inside-box:last-child {
+    float: none;
+  }
+  .sidebar > .resource {
+    margin-top: 0;
+    background-color: rgba(138,188,159,0.5);
+    background-image: url("http://www.csszengarden.com/214/bamboo.png");
+  }
+  .sidebar > .resource .inside-box:last-child {
+    width: 100%;
+  }
+}
+@media screen and (max-width:500px) {
+  .sidebar > * > .inside-box {
+    padding: 10px 5%;
+  }
+}
+@media screen and (max-width:320px) {
+  .sidebar > * > .inside-box {
+    width: 100%;
+  }
+}
