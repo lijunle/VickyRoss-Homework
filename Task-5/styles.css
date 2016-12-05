@@ -332,7 +332,6 @@ abbr[title] {
   background: #edf4f0;
 }
  .sidebar>*>.inside-box {
-    float: left;
     display: inline-block;
     width: 50%;
     margin: 0;
@@ -343,13 +342,13 @@ abbr[title] {
  .sidebar>.composition>.inside-box:first-child {
   padding-top: 10px;
 }
- .sidebar>*>.inside-box:nth-child(odd) { 
-    clear: left;
-  } 
+  .sidebar > .resource > .inside-box:first-child{
+    padding-top: 10px;
+  }
  .sidebar>*>.inside-box:last-child {
   padding-bottom: 10px;
 }
- .resource .inside-box:last-child {
+ .resource > .inside-box:last-child {
   width: 100%;
   }
  .sidebar>*>.inside-box a:first-child {
