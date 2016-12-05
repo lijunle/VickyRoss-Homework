@@ -25,24 +25,28 @@ Bootstrap 提供了一套响应式、移动设备优先的流式栅格系统，�
 
 在栅格系统中，我们在 Less 文件中使用以下媒体查询（media query）来创建关键的分界点阈值。
 
-    /* 超小屏幕（手机，小于 768px） */
-    /* 没有任何媒体查询相关的代码，因为这在 Bootstrap 中是默认的（还记得 Bootstrap 是移动设备优先的吗？） */
+```
+/* 超小屏幕（手机，小于 768px） */
+/* 没有任何媒体查询相关的代码，因为这在 Bootstrap 中是默认的（还记得 Bootstrap 是移动设备优先的吗？） */
 
-    /* 小屏幕（平板，大于等于 768px） */
-    @media (min-width: @screen-sm-min) { ... }
+/* 小屏幕（平板，大于等于 768px） */
+@media (min-width: @screen-sm-min) { ... }
 
-    /* 中等屏幕（桌面显示器，大于等于 992px） */
-    @media (min-width: @screen-md-min) { ... }
+/* 中等屏幕（桌面显示器，大于等于 992px） */
+@media (min-width: @screen-md-min) { ... }
 
-    /* 大屏幕（大桌面显示器，大于等于 1200px） */
-    @media (min-width: @screen-lg-min) { ... }
+/* 大屏幕（大桌面显示器，大于等于 1200px） */
+@media (min-width: @screen-lg-min) { ... }
+```
 
 我们偶尔也会在媒体查询代码中包含 `max-width` 从而将 CSS 的影响限制在更小范围的屏幕大小之内。
 
-    @media (max-width: @screen-xs-max) { ... }
-    @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) { ... }
-    @media (min-width: @screen-md-min) and (max-width: @screen-md-max) { ... }
-    @media (min-width: @screen-lg-min) { ... }
+```
+@media (max-width: @screen-xs-max) { ... }
+@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) { ... }
+@media (min-width: @screen-md-min) and (max-width: @screen-md-max) { ... }
+@media (min-width: @screen-lg-min) { ... }
+```
 
 ## 栅格参数
 
