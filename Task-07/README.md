@@ -85,11 +85,13 @@
 ### 知识点
 
 - JavaScript 条件语句
+- DOM classList API
 
 ### 参考资料
 
 - http://blog.csdn.net/bdstjk/article/details/7164771 （对于正则表达式，可以暂不掌握，直接复制）
 - http://www.w3school.com.cn/js/js_if_else.asp
+- https://developer.mozilla.org/zh-CN/docs/Web/API/Element/classList
 
 ## 要求七
 
