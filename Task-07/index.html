@@ -13,7 +13,7 @@
 
 <!-- 要求三 -->
 <div>
-<p>********要求三********</p>
+  <p>********要求三********</p>
 <button id="mybtn3" class="btn btn-default" onclick="myfuntion3()">随机改变背景颜色</button>
 </div>
 
@@ -23,16 +23,22 @@
 <button id="mybtn4" class="btn btn-default" onmouseover="mOver(this)" onmouseout="mOut(this)">在此悬浮鼠标</button>
 </div>
 
-<!-- 要求五 -->
+<!-- 要求五//要求六 -->
 <div>
 <p>********要求五//要求六********</p>
-    <input id="colornum1" type="text" value="#FFFFFF"/>
+    <input id="colornum1" type="text"/>
     <button class="btn btn-default" onclick="changeColor('colornum1')">提交</button>
 </div>
+  
 <!-- 要求七 -->
   <div>
     <p>********要求七********</p>
-    <input id="colornum2" type="text" onchange="changeColor(this.id)"/>
+    <input id="colornum2" type="text" onkeyup="changeColor(this.id)"/>
   </div>
   
+<!-- 要求八 -->
+<div>
+  <p>********要求八********</p>
+  <input id="colornum3" type="text" onkeyup="myfunction8(this.id)"/>
+</div>
 </div>
