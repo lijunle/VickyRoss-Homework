@@ -30,38 +30,69 @@ function mOut(obj){
 }
 
 /****要求五//要求六//要求七*****/
-function changeColor(x){
-  var a = document.getElementById(x).value;
-  var b = true;
-  for(var i=0;i<a.length;i++){
-    if(a[i]!='#'&&
-       a[i]!='1'&&a[i]!='2'&&a[i]!='3'&&a[i]!='4'&&a[i]!='5'&&
+/*判断是否16进制数*/
+function isHex(a){
+  if(a[0] == "#" && (a.length==7||a.length==4)){
+    for(var i=1;i<a.length;i++){
+    if(a[i]!='1'&&a[i]!='2'&&a[i]!='3'&&a[i]!='4'&&a[i]!='5'&&
        a[i]!='6'&&a[i]!='7'&&a[i]!='8'&&a[i]!='9'&&a[i]!='0'&&
        a[i]!='a'&&a[i]!='b'&&a[i]!='c'&&a[i]!='d'&&a[i]!='e'&&
        a[i]!='f'&&a[i]!='A'&&a[i]!='B'&&a[i]!='C'&&a[i]!='D'&&
        a[i]!='E'&&a[i]!='F'){
-      b=false;
-      break;
+      return false;
     }
+    }
+    return true;
   }
-  if(b == true){
-    if(a.length==7 && a[0]=="#"){
-      document.body.style.background= a ;
-      document.getElementById(x).style.border="#000";
-      document.getElementById(x).style.background="#fff";
+  else if(a[0] != "#" && (a.length == 6||a.length == 3)){
+    for(var i=0;i<a.length;i++){
+    if(a[i]!='1'&&a[i]!='2'&&a[i]!='3'&&a[i]!='4'&&a[i]!='5'&&
+       a[i]!='6'&&a[i]!='7'&&a[i]!='8'&&a[i]!='9'&&a[i]!='0'&&
+       a[i]!='a'&&a[i]!='b'&&a[i]!='c'&&a[i]!='d'&&a[i]!='e'&&
+       a[i]!='f'&&a[i]!='A'&&a[i]!='B'&&a[i]!='C'&&a[i]!='D'&&
+       a[i]!='E'&&a[i]!='F'){
+      return false;
     }
-    else if(a.length==6 && a[0]!="#"){
-      document.body.style.background="#" + a ;
-      document.getElementById(x).style.border="#000";
-      document.getElementById(x).style.background="#fff";
     }
-    else{
-      document.getElementById(x).style.border="red";
-      document.getElementById(x).style.background="red";
-  }
+    return true;
   }
   else{
-    document.getElementById(x).style.border="red";
-    document.getElementById(x).style.background="red";
+    return false;
   }
 }
+/***改变背景颜色****/
+function changeColor(x){
+  var element = document.getElementById(x);
+  var a = element.value;
+  var b = isHex(a);
+  if(b == true){
+    if(a.length==7||a.length==4){
+      document.body.style.background= a ;
+      element.classList.remove("wronginput");
+    }
+    else if(a.length==6||a.length==3){
+      document.body.style.background="#" + a ;
+      element.classList.remove("wronginput");
+    }
+    else{
+      element.classList.add("wronginput");
+      document.body.style.background="#fff";
+    }
+  }
+  else{
+    if(a.length==0){
+      document.body.style.background="#fff";
+      element.classList.remove("wronginput");
+    }
+    else{
+      element.classList.add("wronginput");
+      document.body.style.background="#fff";
+    }  
+  }
+}
+
+/****要求八*****/
+ function myfunction8(x){
+   setTimeout(function(){changeColor(x)}, 3000); 
+ }
+ 
