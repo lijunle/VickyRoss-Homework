@@ -6,6 +6,6 @@ p{
 }
 
 .wronginput{
-  border: 1px solid red;
-  background: red;
+  border: 1px solid #FF4136;
+  background: #FF4136;
 }
