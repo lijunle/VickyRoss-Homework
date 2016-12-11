@@ -53,3 +53,17 @@
 这是十分经典的[JavaScript注入攻击](http://www.oschina.net/news/29110/javascript-injection)。深刻理解攻击是怎么发生的！
 
 你可以尝试使用 HTML Encode（PHP的[htmlspecialchars](http://php.net/manual/en/function.htmlspecialchars.php)方法） 解决这个问题。
+
+## 要求二
+
+尝试把你在上一个任务做的计算器移植到上面的服务器上，然后给它加上保存运算结果的功能。做好之后，尝试一下在电脑保存，然后再在手机打开。
+
+### 知识点
+
+- HTML 页面展示
+- HTML 表单
+- HTML 动态生成
+
+### 参考资料
+
+- 要求一的2个PHP文件（[`index.php`](index.php)和[`post.php`](post.php)）
