@@ -112,7 +112,8 @@
 ### 知识点
 
 - JavaScript 异步执行
+- JavaScript event loop （事件循环）
 
 ### 参考资料
 
-- http://www.ruanyifeng.com/blog/2012/12/asynchronous%EF%BC%BFjavascript.html （可以先理解文章中的前三种实现，第四种比较高级，之后会专门讲解）
+- http://www.ruanyifeng.com/blog/2014/10/event-loop.html
