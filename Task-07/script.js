@@ -27,63 +27,65 @@ function myfunction3(){
 
 /****要求四*****/
 function mOver(obj){
-  var i = setInterval(myfuntion3,1000);
+  var i = setInterval(myfunction3,1000);
   obj.dataset.setInterval=i;
+  
 }
 function mOut(obj){
-  clearInterval(obj.dataset.setInterval);
+  var j = parseInt(obj.dataset.setInterval,10);
+  clearInterval(j);
   document.body.style.background = "#fff";
 }
 
 /****要求五//要求六//要求七*****/
 /*判断是否16进制数的颜色值*/
 function isColorHexCode(a){
-  if((a[0] === "#" && (a.length === 7||a.length === 4))||
-     (a[0] != "#" && (a.length === 6||a.length === 3))){
-    for(var i=0;i<a.length;i++){
+  var startIndex = -1;
+  if((a.length === 7 || a.length === 4) && a[0] === '#'){
+    startIndex = 1;
+  }else if (a.length === 6 || a.length === 3){
+    startIndex = 0;
+  }else if (a.length === 0){
+    return true;
+  }
+  if(startIndex !== -1){
+    for(var i = startIndex ; i<a.length ; i++){
       if(a[i]!='1'&&a[i]!='2'&&a[i]!='3'&&a[i]!='4'&&a[i]!='5'&&
          a[i]!='6'&&a[i]!='7'&&a[i]!='8'&&a[i]!='9'&&a[i]!='0'&&
          a[i]!='a'&&a[i]!='b'&&a[i]!='c'&&a[i]!='d'&&a[i]!='e'&&
          a[i]!='f'&&a[i]!='A'&&a[i]!='B'&&a[i]!='C'&&a[i]!='D'&&
-         a[i]!='E'&&a[i]!='F'&&a[i]!='#'){
+         a[i]!='E'&&a[i]!='F'){
         return false;
       }
     }
     return true;
   }
-  else{
+  else {
     return false;
   }
 }
 /***改变背景颜色****/
-function changeColor(x){
-  var element = document.getElementById(x);
-  var colorInput = element.value;
-  var colorCode = isColorHexCode(colorInput);
-  if(colorCode){
+function changeColor(x) {
+  var input = document.getElementById(x);
+  var divElement = input.parentElement;
+  var colorInput = input.value;
+  var isColorCode = isColorHexCode(colorInput);
+  if(isColorCode){
     if(colorInput.length === 7||colorInput.length === 4){
       document.body.style.background = colorInput;
-      element.classList.remove("wronginput");
-    }
-    else if(colorInput.length === 6||colorInput.length === 3){
+      divElement.classList.remove("has-error");
+    }else if(colorInput.length === 6||colorInput.length === 3) {
       document.body.style.background = "#" + colorInput;
-      element.classList.remove("wronginput");
-    }
-    else{
-      element.classList.add("wronginput");
+      divElement.classList.remove("has-error");
+    }else if(colorInput.length === 0){
       document.body.style.background = "#fff";
+      divElement.classList.remove("has-error");
     }
   }
   else{
-    if(colorInput.length === 0){
-      document.body.style.background = "#fff";
-      element.classList.remove("wronginput");
-    }
-    else{
-      element.classList.add("wronginput");
-      document.body.style.background = "#fff";
-    }  
-  }
+    divElement.classList.add("has-error");
+    document.body.style.background = "#fff";
+  }  
 }
 
 /****要求八*****/
