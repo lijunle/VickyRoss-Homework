@@ -14,11 +14,10 @@ function generateRandomColor(){
   var x = Math.round(Math.random()*255);
   var y = Math.round(Math.random()*255);
   var z = Math.round(Math.random()*255);
-    rgb[0] = x;
-    rgb[1] = y;
-    rgb[2] = z;
-    return rgb;
-  
+  rgb[0] = x;
+  rgb[1] = y;
+  rgb[2] = z;
+  return rgb; 
 }
 function myfunction3(){ 
   var arr = generateRandomColor();
@@ -69,6 +68,7 @@ function changeColor(x) {
   var input = document.getElementById(x);
   var divElement = input.parentElement;
   var colorInput = input.value;
+  console.log("get colorInput " + colorInput);
   var isColorCode = isColorHexCode(colorInput);
   if(isColorCode){
     if(colorInput.length === 7||colorInput.length === 4){
@@ -89,7 +89,9 @@ function changeColor(x) {
 }
 
 /****要求八*****/
- function myfunction8(obj8){
-   setTimeout(function(){changeColor(obj8)}, 3000); 
+ function myfunction8(id8){
+   console.log("before setTimeout");
+   setTimeout(function(){changeColor(id8)}, 10000); 
+   console.log("after setTimeout");
  }
  
