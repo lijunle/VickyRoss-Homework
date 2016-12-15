@@ -1,0 +1,20 @@
+.container {
+  text-align: center;
+}
+p{
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+.inline-div {
+  display:inline-block;
+  width:25%;
+  vertical-align: text-top;
+}
+.form-inline .form-control {
+  width: 500px;
+}
+.div-format{
+  height:100px;
+  width:100px;
+  margin:10px auto;
+}
