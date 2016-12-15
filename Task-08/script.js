@@ -70,9 +70,7 @@ $(document).ready(function(){
   /*要求五*/
   $("#mybtn5").click(function(){
     var colorValue = $("#color-input5").val();
-    var isColorCode = 
-  margin:10px auto;
-}isColorHexCode(colorValue);
+    var isColorCode = isColorHexCode(colorValue);
     var elementDiv = $("#color-input5").parent();
     if(isColorCode){
       if(colorValue.length == 7 || colorValue.length == 4){
