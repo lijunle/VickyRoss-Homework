@@ -25,16 +25,27 @@ function isColorHexCode(a){
   }
 }
 $(document).ready(function(){
-  /*要求一*/
+  /*要求一（方法一）*/
+  // setInterval(function(){
+  //   $("#mybtn1").toggle();
+  // },3000);
+   /*要求一（方法二）*/
+  var btn1 = $("#mybtn1");
   setInterval(function(){
-    $("#mybtn1").toggle();
+    if(btn1.is(":visible")){
+      btn1.hide();
+    }else{
+      btn1.show();
+    }
   },3000);
   
+  
   /*要求二*/
-  $("#mybtn2").click(function(){
-    $(this).hide();
+  var btn2 = $("#mybtn2");
+  btn2.click(function(){
+    btn2.hide();
     setTimeout(function(){
-    $("#mybtn2").show();
+    btn2.show();
   },3000);
   });
   
@@ -45,16 +56,17 @@ $(document).ready(function(){
   
  
   /*要求四*/
+  var colorInput4 = $("#color-input4");
   $("#mybtn4").click(function(){
-    var colorValue = $("#color-input4").val();
+    var colorValue = colorInput4.val();
     var isColorcode = isColorHexCode(colorValue);
-    var elementDiv = $("#color-input4").parent();
+    var elementDiv = colorInput4.parent();
     if(isColorcode){
       if(colorValue.length === 7||colorValue.length === 4){
         $("body").css("background-color",colorValue);
         elementDiv.removeClass("has-error");
       }else if(colorValue.length === 6||colorValue.length === 3){
-        $("body").css("background-color","#"+colorValue);
+        $("body").css("background-color","#" + colorValue);
         elementDiv.removeClass("has-error");
       }else if(colorValue.length === 0){
         $("body").css("background-color","#fff"); 
@@ -68,17 +80,28 @@ $(document).ready(function(){
   });
   
   /*要求五*/
+  var colorInput5 = $("#color-input5");
   $("#mybtn5").click(function(){
-    var colorValue = $("#color-input5").val();
+    var colorValue = colorInput5.val();
     var isColorCode = isColorHexCode(colorValue);
-    var elementDiv = $("#color-input5").parent();
+    var elementDiv = colorInput5.parent();
     if(isColorCode){
-      if(colorValue.length == 7 || colorValue.length == 4){
-       elementDiv.after("<div class=\"div-format\">fasdfsadf</div>");
+      if(colorValue.length == 7 || colorValue.length == 4){ 
+       $(".container").append("<div class='div-format'></div>");
+       $(".container").children().last().css("background-color",colorValue);
+        console.log($("div.div-format"));
+      }else if(colorValue.length === 6||colorValue.length === 3){
+       $(".container").append("<div class='div-format'></div>");
+       $(".container").children().last().css("background-color","#" + colorValue);
+      }else if(colorValue.length === 0){
+        elementDiv.removeClass("has-error");
       }
     }
     else{
-      
+      elementDiv.addClass("has-error");
     }
+    $("div.div-format").click(function(){
+      $(this).remove();
+    });
   });
 });
