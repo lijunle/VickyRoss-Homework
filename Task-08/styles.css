@@ -8,7 +8,7 @@ p{
 .inline-div {
   display:inline-block;
   width:25%;
-  vertical-align: text-top;
+  vertical-align: top;
 }
 .form-inline .form-control {
   width: 500px;
