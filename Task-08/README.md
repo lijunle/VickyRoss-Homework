@@ -81,11 +81,15 @@ jQuery API 手册的话，分别有英文原版和中文翻译：
 ### 知识点
 
 - jQuery 添加 DOM
+- DOM 事件流（Event Flow）
+- DOM 事件代理
 
 ### 参考资料
 
 - http://www.w3school.com.cn/jquery/jquery_dom_add.asp
 - http://learn.jquery.com/using-jquery-core/manipulating-elements/#creating-new-elements
+- http://coderlt.coding.me/2016/11/22/js-event/
+- http://www.css88.com/jqapi-1.9/delegate/
 
 ## 要求六
 
