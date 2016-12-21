@@ -13,8 +13,17 @@ p{
 .form-inline .form-control {
   width: 500px;
 }
+.space-format{
+  margin: 10px auto;
+  width: 200px;
+  height: 100px;
+}
 .div-format{
-  height:100px;
-  width:100px;
-  margin:10px auto;
+  height: 100px;
+  width: 100px;
+  margin: 0 10px;
+  vertical-align: middle;
+}
+.inline-div-format{
+  display: inline-block;
 }
