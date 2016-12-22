@@ -4,4 +4,6 @@
 
 ## 要求一
 
-参考原型：https://modao.cc/app/tlnQdbxOqan4M2ezXvu1jTGyevyabbA
+实现一个类似于iPhone的计时器。界面可以参考下图，要求实现启动，停止和复位这三个功能。
+
+![png-1](1.png) ![png-2](2.png)
