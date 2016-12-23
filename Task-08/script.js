@@ -1,29 +1,3 @@
-/*判断是否16进制数的颜色值
-function isColorHexCode(a){
-  var startIndex = -1;
-  if((a.length === 7 || a.length === 4) && a[0] === '#'){
-    startIndex = 1;
-  }else if (a.length === 6 || a.length === 3){
-    startIndex = 0;
-  }else if (a.length === 0){
-    return true;
-  }
-  if(startIndex !== -1){
-    for(var i = startIndex ; i<a.length ; i++){
-      if(a[i]!='1'&&a[i]!='2'&&a[i]!='3'&&a[i]!='4'&&a[i]!='5'&&
-         a[i]!='6'&&a[i]!='7'&&a[i]!='8'&&a[i]!='9'&&a[i]!='0'&&
-         a[i]!='a'&&a[i]!='b'&&a[i]!='c'&&a[i]!='d'&&a[i]!='e'&&
-         a[i]!='f'&&a[i]!='A'&&a[i]!='B'&&a[i]!='C'&&a[i]!='D'&&
-         a[i]!='E'&&a[i]!='F'){
-        return false;
-      }
-    }
-    return true;
-  }
-  else {
-    return false;
-  }
-}*/
 /*判断是否16进制数*/
 function isHexCode(a){
   if((a>='0' && a<='9') ||  
@@ -36,8 +10,8 @@ function isHexCode(a){
   }
 }
 /*判断是否16进制字符串*/
-function isHexString(str, start, end){
-  for(var i = start ; i < end ; i++){
+function isHexString(str, start){
+  for(var i = start ; i < str.length ; i++){
     var value = str[i];
     if(!(isHexCode(value))){
       return false;
@@ -48,20 +22,27 @@ function isHexString(str, start, end){
 /*判断是否十六进制颜色值*/
 function isHexColorCode(value){
   if((value.length === 7 || value.length === 4) && value[0] === '#'){
-    return isHexString(value, 1, value.length);
+    return isHexString(value, 1);
   }else if(value.length === 6 || value.length === 3){
-    return isHexString(value, 0, value.length);
+    return isHexString(value, 0);
   }
   else{
     return false;
   }
 }
 
+function dispalyWindowSize(){
+    var outputWindowSize = $("#output-windowsize");
+    var txt = "width*height = " + $(window).width() + "*" + $(window).height();
+    outputWindowSize.val(txt);
+  }
+
 $(document).ready(function(){
-  /*要求一（方法一）*/
-  // setInterval(function(){
-  //   $("#mybtn1").toggle();
-  // },3000);
+  /* 要求一（方法一）*/
+   /*setInterval(function(){
+     $("#mybtn1").toggle();
+   },3000);*/
+  
    /*要求一（方法二）*/
   var btn1 = $("#mybtn1");
   setInterval(function(){
@@ -71,7 +52,6 @@ $(document).ready(function(){
       btn1.show();
     }
   },3000);
-  
   
   /*要求二*/
   var btn2 = $("#mybtn2");
@@ -87,7 +67,6 @@ $(document).ready(function(){
     $("body").css("background-color","yellow");
   });
   
- 
   /*要求四*/
   var mybtn4 = $("#mybtn4");
   var colorInput4 = $("#color-input4");
@@ -114,13 +93,14 @@ $(document).ready(function(){
   var mybtn5  = $("#mybtn5");
   var colorInput5 = $("#color-input5");
   var elementDiv5 = colorInput5.parent();
+  var demand5 = $("#demand5");
   mybtn5.click(function(){
     var colorValue = colorInput5.val();
     var isColorCode = isHexColorCode(colorValue);
     if(isColorCode){
       var color = (colorValue[0] === '#') ? colorValue : '#' + colorValue;
-      elementDiv5.append("<div class='div-format'></div>");
-      var addDiv = elementDiv5.children().last();
+      var addDiv = $("<div class='div-format'></div>");
+      demand5.append(addDiv);
       addDiv.css("background-color",color);
       elementDiv5.removeClass("has-error");
     }else if(colorValue.length === 0){
@@ -129,7 +109,7 @@ $(document).ready(function(){
     else{
       elementDiv5.addClass("has-error");
     }
-    $("div.div-format").click(function(){
+    addDiv.click(function(){
       $(this).remove();
     });
   });
@@ -138,16 +118,19 @@ $(document).ready(function(){
   var mybtn7 = $("#mybtn7");
   var colorInput7 = $("#color-input7");
   var elementDiv7 = colorInput7.parent();
+  var demand7 = $("#demand7");
   mybtn7.click(function(){
     var colorValue = colorInput7.val();
     var isColorCode = isHexColorCode(colorValue);
     if(isColorCode){
       var color = (colorValue[0] === '#') ? colorValue : '#' + colorValue;
       var addSpace = $("<div class='space-format'></div>");
-      elementDiv7.append(addSpace);
-      addSpace.append("<div class='div-format inline-div-format'></div>");
-      addSpace.children().last().css("background-color",color);
-      addSpace.append("<button class='btn btn-default mybtn'>删除</button>");
+      demand7.append(addSpace);
+      var addDiv = $("<div class='div-format inline-div-format'></div>");
+      addSpace.append(addDiv);
+      addDiv.css("background-color",color);
+      var delBtn = $("<button class='btn btn-default mybtn'>删除</button>");
+      addSpace.append(delBtn);
       elementDiv7.removeClass("has-error");
     }else if(colorValue.length === 0){
       elementDiv7.removeClass("has-error");
@@ -155,7 +138,6 @@ $(document).ready(function(){
     else{
       elementDiv7.addClass("has-error");
     }
-    var delBtn = addSpace.children().last();
     delBtn.click(function(){
       addSpace.remove();
     });
@@ -165,17 +147,20 @@ $(document).ready(function(){
   var mybtn8 = $("#mybtn8");
   var colorInput8 = $("#color-input8");
   var elementDiv8 = colorInput8.parent();
+  var demand8 = $("#demand8");
   mybtn8.click(function(){
     var colorValue = colorInput8.val();
     var isColorCode = isHexColorCode(colorValue);
     if(isColorCode){
       var color = (colorValue[0] ==='#') ? colorValue : ('#' + colorValue);
       var addSpace = $("<div class='space-format'></div>");
-      elementDiv8.append(addSpace);
-      addSpace.append("<div  class='div-format inline-div-format'></div>"); 
-      addSpace.children().last().css("background-color",color);
-      addSpace.append("<button class='btn btn-default'>删除</button>");
-      addSpace.children().last().hide();
+      demand8.append(addSpace);
+      var addDiv = $("<div  class='div-format inline-div-format'></div>");
+      addSpace.append(addDiv); 
+      addDiv.css("background-color",color);
+      var delBtn = $("<button class='btn btn-default'>删除</button>");
+      addSpace.append(delBtn);
+      delBtn.hide();
       elementDiv8.removeClass("has-error");
     }else if(colorValue.length === 0){
       elementDiv8.removeClass("has-error");
@@ -185,21 +170,23 @@ $(document).ready(function(){
     }
     addSpace.hover(
       function(){
-        $(this).children().last().show();
-        $(this).children().last().click(function(){
+        addSpace.width(175);
+        delBtn.show();
+        delBtn.click(function(){
           addSpace.remove();
         });
       },
       function(){
-        $(this).children().last().hide();
+        addSpace.width(100);
+        delBtn.hide();
       }
     );
   });
   
   /*要求九*/
-  var outputWindowSize = $("#output-windowsize");
-  setInterval(function(){
-    var txt = "width*height = " + $(window).width() + "*" + $(window).height();
-    var valueWindowSize = outputWindowSize.val(txt);
-  },300);
+  
+  dispalyWindowSize();
+  $(window).resize(function(){
+    dispalyWindowSize();
+  });
 });
