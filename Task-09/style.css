@@ -1,0 +1,36 @@
+body{
+  background: #1A1818;
+}
+.timer-box{
+  margin: 230px auto;
+  text-align: center;
+}
+#time-output{
+  height: 30px;
+  width: 250px;
+  padding-right: 5px;
+  text-align: center;
+  border-radius: 4px;
+  font-size: 38px;
+  background: #1A1818;
+  border: none;
+  color: #fff;
+}
+.btn-box{
+  margin-top: 30px;
+}
+.btn{
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  margin: 0 30px;
+  background: #9e9c9f;
+  border: double #fff 3px;
+  font-size: 19px;
+}
+.start{
+  background: #49ae71;
+}
+.stop{
+  background: #e66060;
+}
