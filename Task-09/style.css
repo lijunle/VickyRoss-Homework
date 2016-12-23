@@ -28,9 +28,9 @@ body{
   border: double #fff 3px;
   font-size: 19px;
 }
-.start{
+.-start{
   background: #49ae71;
 }
-.stop{
+.-stop{
   background: #e66060;
 }
