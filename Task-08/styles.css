@@ -15,15 +15,18 @@ p{
 }
 .space-format{
   margin: 10px auto;
-  width: 200px;
+  width: 100px;
   height: 100px;
 }
 .div-format{
   height: 100px;
   width: 100px;
-  margin: 0 10px;
+  margin: 10px auto;
   vertical-align: middle;
+  cursor: pointer;
 }
 .inline-div-format{
   display: inline-block;
+  margin: 0 10px;
+  cursor: default;
 }
