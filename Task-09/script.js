@@ -22,8 +22,8 @@ $(document).ready(function(){
   startBtn.click(function(){
     startBtn.hide();
     stopBtn.show();
-    var timerId = setInterval(timeClock,1000);
-    startBtn.data("setInterval",timerId);
+    var i = setInterval(timeClock,1000);
+    startBtn.data("setInterval",i);
   });
   /*停止按钮*/
   stopBtn.click(function(){
@@ -38,9 +38,7 @@ $(document).ready(function(){
     stopBtn.hide();
     var timerId = startBtn.data("setInterval");
     clearInterval(timerId);
-    second = 0;
-    minute = 0;
-    hour = 0;
+    time = 0;
     timeOutput.val("00 : 00 : 00");
   });
 });
