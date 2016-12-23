@@ -3,75 +3,44 @@ $(document).ready(function(){
   var startBtn = $("#start-btn");
   var stopBtn = $("#stop-btn");
   var resetBtn = $("#reset-btn");
+  var time = 0;
   var second = 0;
   var minute = 0;
   var hour = 0;
   stopBtn.hide();
-  /*timeOutput.data("second",0);
-    timeOutput.data("minute",0);
-    timeOutput.data("hour",0);*/
-  
+  function timeClock(){
+    time = time + 1;
+    second = time % 60;
+    minute = Math.floor(time / 60);
+    hour = Math.floor(time / 3600);
+    timeOutput.val(buLing(hour) + " : " + buLing(minute) + " : " + buLing(second));
+  }
+  function buLing(a){
+    return a > 9 ? a : "0" + a ;
+  }
+  /*开始按钮*/
   startBtn.click(function(){
     startBtn.hide();
     stopBtn.show();
-    function timeClock(){
-      if(second < 59){
-        second = second + 1;
-        if(second <= 9){
-          if(minute <= 9){
-            if(hour <= 9){
-              timeOutput.val(hour + "0 : 0" + minute + " : 0" + second);
-            }else if(hour > 9){
-              timeOutput.val(hour + " : 0" + minute + " : 0" + second);
-            }
-          }else if(minute > 9){
-            if(hour <= 9){
-              timeOutput.val(hour + "0 : " + minute + " : 0" + second);
-            }else if(hour > 9){
-              timeOutput.val(hour + " : " + minute + " : 0" + second);
-            }
-          } 
-        }else if(second > 9){
-          if(minute <= 9){
-            if(hour <= 9){
-              timeOutput.val(hour + "0 : 0" + minute + " : " + second);
-            }else if(hour > 9){
-              timeOutput.val(hour + " : 0" + minute + " : " + second);
-            }
-          }else if(minute > 9){
-            if(hour <= 9){
-              timeOutput.val(hour + "0 : " + minute + " : " + second);
-            }else if(hour > 9){
-              timeOutput.val(hour + " : " + minute + " : " + second);
-            }
-          }
-        }
-      }else if(second >= 59){
-        second = 0;
-        minute = minute + 1;
-        if(minute >= 59){
-          minute = 0;
-          hour = hour + 1;
-        }
-      }
-    }
-    var i = setInterval(timeClock,1000);
-    startBtn.data("setInterval",i);
+    var timerId = setInterval(timeClock,1000);
+    startBtn.data("setInterval",timerId);
   });
+  /*停止按钮*/
   stopBtn.click(function(){
     startBtn.show();
     stopBtn.hide();
-    var j = startBtn.data("setInterval");
-    clearInterval(j);
+    var timerId = startBtn.data("setInterval");
+    clearInterval(timerId);
   });
+  /*复位按钮*/
   resetBtn.click(function(){
     startBtn.show();
     stopBtn.hide();
-    var j = startBtn.data("setInterval");
-    clearInterval(j);
+    var timerId = startBtn.data("setInterval");
+    clearInterval(timerId);
     second = 0;
     minute = 0;
     hour = 0;
-    timeOutput.val(hour + "0 : 0" + minute + " : 0" + second);
+    timeOutput.val("00 : 00 : 00");
   });
 });
