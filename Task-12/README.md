@@ -32,7 +32,11 @@ AJAX 就是可以解决这些 paint points。前端技术发展到今天，AJAX 
 
 在理解完 HTTP 协议，还有需要学习一种轻量级语言——JSON。它的语法是 JavaScript 语法的一部分，用来表示数据。相比于 XML，它是简洁和容易理解。在网络传输过程中，会大量地使用 JSON 格式的数据。
 
-要求使用 JSON 格式，表示[当前项目](https://github.com/lijunle/VickyRoss-Homework)的文件目录结构。
+要求使用 JSON 格式，表示[当前项目](https://github.com/lijunle/VickyRoss-Homework)的文件目录结构。然后把文件保存为 `task-12.json` 并存放到 vicky-php 服务器上。
+
+学习使用 Postman 这个工具去测试访问你的 JSON 文件。
+
+![Postman](./postman.gif)
 
 ### 知识点
 
@@ -42,12 +46,15 @@ AJAX 就是可以解决这些 paint points。前端技术发展到今天，AJAX 
 
 - https://zh.wikipedia.org/wiki/JSON
 - http://www.w3school.com.cn/json/index.asp
+- https://www.getpostman.com/
 
 ## 要求三
 
 准备工作做完了，我们终于可以开始学习 AJAX 了。
 
-把要求二的结果保存为 `task-12.json` 文件，放到 vicky-php 服务器上。然后在 CodePen 创建一个页面。页面开始的时候只有一个按钮，点击按钮之后，发送 AJAX 请求到 vicky-php 服务器请求 `task-12.json` 文件，并在页面上以树形结构把文件目录结构展示出来。
+在 CodePen 创建一个页面。页面开始的时候只有一个按钮，点击按钮之后，发送 AJAX 请求到 vicky-php 服务器请求 `task-12.json` 文件，并在页面上以树形结构把文件目录结构展示出来。
+
+在编写代码访问 `task-12.json` 文件之前，你应该先使用 Postman 确保文件在服务器上，并且能够正确地访问。
 
 ### 知识点
 
