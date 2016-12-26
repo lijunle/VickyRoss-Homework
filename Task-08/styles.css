@@ -11,9 +11,16 @@ p{
   vertical-align: top;
 }
 .form-inline .form-control {
+  width: 70%;
+  display: inline-block;
+}
+@media screen and (min-width:768px){
+ .form-inline .form-control {
   width: 500px;
+} 
 }
 .space-format{
+  position: relative;
   margin: 10px auto;
   width: 100px;
   height: 100px;
@@ -27,6 +34,11 @@ p{
 }
 .inline-div-format{
   display: inline-block;
-  margin: 0 10px;
+  margin: 0;
   cursor: default;
+}
+.space-btn{
+  position: absolute;
+  top: 30px;
+  margin: 0 10px;
 }
