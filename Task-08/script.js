@@ -93,14 +93,14 @@ $(document).ready(function(){
   var mybtn5  = $("#mybtn5");
   var colorInput5 = $("#color-input5");
   var elementDiv5 = colorInput5.parent();
-  var demand5 = $("#demand5");
+  var requirement5 = $("#requirement5");
   mybtn5.click(function(){
     var colorValue = colorInput5.val();
     var isColorCode = isHexColorCode(colorValue);
     if(isColorCode){
       var color = (colorValue[0] === '#') ? colorValue : '#' + colorValue;
       var addDiv = $("<div class='div-format'></div>");
-      demand5.append(addDiv);
+      requirement5.append(addDiv);
       addDiv.css("background-color",color);
       elementDiv5.removeClass("has-error");
     }else if(colorValue.length === 0){
@@ -118,18 +118,19 @@ $(document).ready(function(){
   var mybtn7 = $("#mybtn7");
   var colorInput7 = $("#color-input7");
   var elementDiv7 = colorInput7.parent();
-  var demand7 = $("#demand7");
+  var requirement7 = $("#requirement7");
   mybtn7.click(function(){
     var colorValue = colorInput7.val();
     var isColorCode = isHexColorCode(colorValue);
     if(isColorCode){
       var color = (colorValue[0] === '#') ? colorValue : '#' + colorValue;
       var addSpace = $("<div class='space-format'></div>");
-      demand7.append(addSpace);
+      addSpace.width(180);
+      requirement7.append(addSpace);
       var addDiv = $("<div class='div-format inline-div-format'></div>");
       addSpace.append(addDiv);
       addDiv.css("background-color",color);
-      var delBtn = $("<button class='btn btn-default mybtn'>删除</button>");
+      var delBtn = $("<button class='btn btn-default mybtn space-btn'>删除</button>");
       addSpace.append(delBtn);
       elementDiv7.removeClass("has-error");
     }else if(colorValue.length === 0){
@@ -147,18 +148,18 @@ $(document).ready(function(){
   var mybtn8 = $("#mybtn8");
   var colorInput8 = $("#color-input8");
   var elementDiv8 = colorInput8.parent();
-  var demand8 = $("#demand8");
+  var requirement8 = $("#requirement8");
   mybtn8.click(function(){
     var colorValue = colorInput8.val();
     var isColorCode = isHexColorCode(colorValue);
     if(isColorCode){
       var color = (colorValue[0] ==='#') ? colorValue : ('#' + colorValue);
       var addSpace = $("<div class='space-format'></div>");
-      demand8.append(addSpace);
+      requirement8.append(addSpace);
       var addDiv = $("<div  class='div-format inline-div-format'></div>");
       addSpace.append(addDiv); 
       addDiv.css("background-color",color);
-      var delBtn = $("<button class='btn btn-default'>删除</button>");
+      var delBtn = $("<button class='btn btn-default space-btn'>删除</button>");
       addSpace.append(delBtn);
       delBtn.hide();
       elementDiv8.removeClass("has-error");
@@ -170,7 +171,7 @@ $(document).ready(function(){
     }
     addSpace.hover(
       function(){
-        addSpace.width(175);
+        addSpace.width(100+$(".space-btn").width());
         delBtn.show();
         delBtn.click(function(){
           addSpace.remove();
