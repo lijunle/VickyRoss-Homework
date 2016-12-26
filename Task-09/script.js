@@ -3,39 +3,37 @@ $(document).ready(function(){
   var startBtn = $("#start-btn");
   var stopBtn = $("#stop-btn");
   var resetBtn = $("#reset-btn");
+  
   var time = 0;
-  var second = 0;
-  var minute = 0;
-  var hour = 0;
-  stopBtn.hide();
-  function timeClock(){
+  
+  function displayTime(){
     time = time + 1;
-    second = time % 60;
-    minute = Math.floor(time / 60);
-    hour = Math.floor(time / 3600);
-    timeOutput.val(buLing(hour) + " : " + buLing(minute) + " : " + buLing(second));
+    var second = time % 60;
+    var minute = Math.floor(time / 60);
+    var hour = Math.floor(time / 3600);
+    timeOutput.val(complementZero(hour) + " : " + complementZero(minute) + " : " + complementZero(second));
   }
-  function buLing(a){
+  function complementZero(a){
     return a > 9 ? a : "0" + a ;
   }
   /*开始按钮*/
   startBtn.click(function(){
     startBtn.hide();
     stopBtn.show();
-    var i = setInterval(timeClock,1000);
-    startBtn.data("setInterval",i);
+    var timeId = setInterval(displayTime,1000);
+    startBtn.data("setInterval",timeId);
   });
   /*停止按钮*/
   stopBtn.click(function(){
-    startBtn.show();
     stopBtn.hide();
+    startBtn.show();
     var timerId = startBtn.data("setInterval");
     clearInterval(timerId);
   });
   /*复位按钮*/
   resetBtn.click(function(){
-    startBtn.show();
     stopBtn.hide();
+    startBtn.show();
     var timerId = startBtn.data("setInterval");
     clearInterval(timerId);
     time = 0;
