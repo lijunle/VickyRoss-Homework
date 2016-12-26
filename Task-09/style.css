@@ -2,13 +2,11 @@ body{
   background: #1A1818;
 }
 .timer-box{
-  margin: 230px auto;
+  position: relative;
+  top: 230px;
   text-align: center;
 }
 #time-output{
-  height: 30px;
-  width: 250px;
-  padding-right: 5px;
   text-align: center;
   border-radius: 4px;
   font-size: 38px;
@@ -32,5 +30,6 @@ body{
   background: #49ae71;
 }
 .-stop{
+  display: none;
   background: #e66060;
 }
