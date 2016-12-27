@@ -11,7 +11,7 @@ $(document).ready(function(){
     var second = time % 60;
     var minute = Math.floor(time / 60);
     var hour = Math.floor(time / 3600);
-    timeOutput.val(complementZero(hour) + " : " + complementZero(minute) + " : " + complementZero(second));
+    timeOutput.html(complementZero(hour) + " : " + complementZero(minute) + " : " + complementZero(second));
   }
   function complementZero(a){
     return a > 9 ? a : "0" + a ;
@@ -37,6 +37,6 @@ $(document).ready(function(){
     var timerId = startBtn.data("setInterval");
     clearInterval(timerId);
     time = 0;
-    timeOutput.val("00 : 00 : 00");
+    timeOutput.html("00 : 00 : 00");
   });
 });
