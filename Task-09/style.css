@@ -7,15 +7,17 @@ body{
   text-align: center;
 }
 #time-output{
-  text-align: center;
   border-radius: 4px;
-  font-size: 38px;
-  background: #1A1818;
-  border: none;
+  font-size: 48px;
   color: #fff;
 }
+@media screen and (max-width: 350px){
+  #time-output{
+  font-size: 38px;
+}
+}
 .btn-box{
-  margin-top: 30px;
+  margin-top: 20px;
 }
 .btn{
   height: 80px;
@@ -25,6 +27,14 @@ body{
   background: #9e9c9f;
   border: double #fff 3px;
   font-size: 19px;
+}
+@media screen and (max-width: 350px){
+.btn{
+  height: 60px;
+  width: 60px;
+  margin: 0 15px;
+  font-size: 16px;
+}
 }
 .-start{
   background: #49ae71;
