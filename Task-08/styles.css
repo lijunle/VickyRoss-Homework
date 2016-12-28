@@ -19,7 +19,7 @@ p{
   width: 500px;
 } 
 }
-.space-format{
+.space-format{ 
   position: relative;
   margin: 10px auto;
   width: 100px;
@@ -29,7 +29,6 @@ p{
   height: 100px;
   width: 100px;
   margin: 10px auto;
-  vertical-align: middle;
   cursor: pointer;
 }
 .inline-div-format{
@@ -39,6 +38,6 @@ p{
 }
 .space-btn{
   position: absolute;
-  top: 30px;
+  top:30%;
   margin: 0 10px;
 }
