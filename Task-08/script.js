@@ -125,7 +125,6 @@ $(document).ready(function(){
     if(isColorCode){
       var color = (colorValue[0] === '#') ? colorValue : '#' + colorValue;
       var addSpace = $("<div class='space-format'></div>");
-      addSpace.width(180);
       requirement7.append(addSpace);
       var addDiv = $("<div class='div-format inline-div-format'></div>");
       addSpace.append(addDiv);
@@ -187,7 +186,5 @@ $(document).ready(function(){
   /*要求九*/
   
   dispalyWindowSize();
-  $(window).resize(function(){
-    dispalyWindowSize();
-  });
+  $(window).resize(dispalyWindowSize);
 });
