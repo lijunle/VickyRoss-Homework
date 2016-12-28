@@ -1,8 +1,20 @@
 $(document).ready(function(){
+  var timerBox = $(".timer-box");
   var timeOutput = $("#time-output");
   var startBtn = $("#start-btn");
   var stopBtn = $("#stop-btn");
   var resetBtn = $("#reset-btn");
+  setBoxMiddle();
+  
+  function setBoxMiddle(){
+      var windowHeight = $(window).height();
+    var timerBoxHeight = timerBox.height();
+    if(windowHeight > timerBoxHeight){
+      var top = (windowHeight - timerBoxHeight) / 2;
+      timerBox.css("margin-top" , top + "px");
+    }
+  }
+  $(window).resize(setBoxMiddle);
   
   var time = 0;
   
@@ -14,7 +26,7 @@ $(document).ready(function(){
     timeOutput.html(complementZero(hour) + " : " + complementZero(minute) + " : " + complementZero(second));
   }
   function complementZero(a){
-    return a > 9 ? a : "0" + a ;
+    return a > 9 ? "" + a : "0" + a ;
   }
   /*开始按钮*/
   startBtn.click(function(){
