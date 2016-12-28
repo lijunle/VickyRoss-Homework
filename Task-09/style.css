@@ -1,39 +1,46 @@
 body{
+  text-align: center;
   background: #1A1818;
 }
 .timer-box{
-  position: relative;
-  top: 230px;
-  text-align: center;
+  
+  /*height: 200px;
+  width: 300px;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  right:0;
+  bottom: 0;
+  left: 0;*/
 }
 #time-output{
-  border-radius: 4px;
-  font-size: 48px;
+  display: block;
+  font-size: 38px;
   color: #fff;
 }
-@media screen and (max-width: 350px){
+@media screen and (min-width: 350px){
   #time-output{
-  font-size: 38px;
+  font-size: 48px;
 }
 }
 .btn-box{
   margin-top: 20px;
 }
 .btn{
-  height: 80px;
-  width: 80px;
-  border-radius: 50%;
-  margin: 0 30px;
-  background: #9e9c9f;
-  border: double #fff 3px;
-  font-size: 19px;
-}
-@media screen and (max-width: 350px){
-.btn{
   height: 60px;
   width: 60px;
+  border-radius: 50%;
   margin: 0 15px;
+  background: #9e9c9f;
+  border: double #fff 3px;
   font-size: 16px;
+}
+@media screen and (min-width: 350px){
+.btn{
+  height: 80px;
+  width: 80px;
+  margin: 0 30px;
+  font-size: 19px;
 }
 }
 .-start{
