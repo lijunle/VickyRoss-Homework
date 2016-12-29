@@ -2,17 +2,6 @@ body{
   text-align: center;
   background: #1A1818;
 }
-.timer-box{
-  
-  /*height: 200px;
-  width: 300px;
-  margin: auto;
-  position: absolute;
-  top: 0;
-  right:0;
-  bottom: 0;
-  left: 0;*/
-}
 #time-output{
   display: block;
   font-size: 38px;
@@ -47,6 +36,8 @@ body{
   background: #49ae71;
 }
 .-stop{
-  display: none;
   background: #e66060;
+}
+.none-display{
+  display: none;
 }
