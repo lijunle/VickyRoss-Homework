@@ -1,0 +1,43 @@
+body{
+  text-align: center;
+  background: #1A1818;
+}
+#time-output{
+  display: block;
+  font-size: 38px;
+  color: #fff;
+}
+@media screen and (min-width: 350px){
+  #time-output{
+  font-size: 48px;
+}
+}
+.btn-box{
+  margin-top: 20px;
+}
+.btn{
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  margin: 0 15px;
+  background: #9e9c9f;
+  border: double #fff 3px;
+  font-size: 16px;
+}
+@media screen and (min-width: 350px){
+.btn{
+  height: 80px;
+  width: 80px;
+  margin: 0 30px;
+  font-size: 19px;
+}
+}
+.-start{
+  background: #49ae71;
+}
+.-stop{
+  background: #e66060;
+}
+.none-display{
+  display: none;
+}
