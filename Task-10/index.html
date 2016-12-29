@@ -1,0 +1,29 @@
+<div id="calculator-box">
+  <div id="formula-box" class="input-box">
+    <input id="formula" class="input-display" type="text"/>
+  </div>
+  <div id="result-box" class="input-box">
+    <input id="result" class="input-display" type="text"/>
+  </div>
+  <div id="operate-box">
+    <div class="number-box">
+    <button id="num7" class="number-btn" onclick="onclicknum(7)">7</button><button id="num8" class="number-btn" onclick="onclicknum(8)">8</button><button id="num9" class="number-btn" onclick="onclicknum(9)">9</button>
+    </div><button class="operation-btn" onclick="onclickclear()">DEL</button>
+    
+    <div class="number-box">
+    <button id="num4" class="number-btn" onclick="onclicknum(4)">4</button><button id="num5" class="number-btn" onclick="onclicknum(5)">5</button><button id="num6" class="number-btn" onclick="onclicknum(6)">6</button>
+    </div><button id="divide" class="operation-btn" onclick="onclicknum('÷')">÷</button>
+    
+    <div class="number-box">
+    <button id="num1" class="number-btn" onclick="onclicknum(1)">1</button><button id="num2" class="number-btn" onclick="onclicknum(2)">2</button><button id="num3" class="number-btn" onclick="onclicknum(3)">3</button>
+    </div><button id="mul" class="operation-btn" onclick="onclicknum('×')">×</button>
+    
+    <div class="number-box">
+    <button class="number-btn" onclick="onclicknum('.')">.</button><button id="num0"  class="number-btn" onclick="onclicknum(0)">0</button><button id="equal" class="number-btn" onclick="onclickresult()">=</button>
+    </div><button id="sub" class="operation-btn" onclick="onclicknum('-')">-</button>
+    
+    <div>
+      <button id="plus" class="operation-btn" onclick="onclicknum('+')">+</button>
+    </div>
+  </div>
+</div>
