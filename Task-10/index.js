@@ -1,13 +1,35 @@
 var formula = document.getElementById("formula");
 var result = document.getElementById("result");
+var calculatorBox = document.getElementById("calculator-box");
 var formulaValue;
-function onclicknum(nums) {
-  formula.value = formula.value + nums;
+
+calculatorBox.addEventListener('click', function(event){
+  var target = event.target;
+  while (target.tagName !== 'BUTTON') {
+    target = target.parentNode;
+    if (target === button) return;
+  }
+  /*数字按钮和操作按钮*/
+  if(target.className === "btn -left operand" || target.className === "btn -right operand"){
+    onclicknum(target.innerHTML);
+  }
+   /*特殊的清除按钮和等号按钮*/
+  if(target.id === "clear-btn"){
+    onclickclear();
+  }else if(target.id === "equal"){
+    onclickresult();
+  }
+  
+});
+
+
+function onclicknum(operand) {
+  formula.value = formula.value + operand;
   var formulaValue = formula.value;
   var isformula = isFormula(formulaValue);
   var formulaResult = 0;
   if (isformula) {
-    formulaResult = splitCalFormula(formulaValue);
+    formulaResult = CalFormula(formulaValue);
      if(formulaResult === Infinity){
       result.value = "ERROR";
     }else{
@@ -18,19 +40,29 @@ function onclicknum(nums) {
   }
 }
 function onclickclear() {
+  formula.style.fontSize = "80px";
   formula.value = "";
   result.value = "";
 }
 function onclickresult() { 
-  var a = parseFloat(result.value);
+  formula.style.fontSize = "80px";
   if(result.value === "ERROR"){
-    
+    //...
   }else if(result.value === ""){
-    
+    //...
   }
   else{
-    formula.value = a.toFixed(5);
-    result.value = "";
+    if(result.value.length > 8){
+      formula.style.fontSize = "40px";
+      formula.value = result.value;
+      result.value = "";
+    }
+    else{
+      formula.value = result.value;
+      console.log(formula.length);
+      result.value = "";
+    }
+    
   }
 }
 
@@ -44,25 +76,20 @@ function isFormula(str) {
     return false;
   }
   for (var i = 0; i < strLength; i++) {
-    
     if(str[i] === "+" || str[i] === "-" || str[i] === "×" || str[i] === "÷"){
       operatorCount++;
     }
   }
-  if(operatorCount > 1 || operatorCount === 0){
-    return false;
-  }else if(operatorCount === 1){
-    return true;
-  }
+  return operatorCount === 1;
 }
 
-/*分割并计算算式*/
-function splitCalFormula(str){
+/*计算算式*/
+function CalFormula(str){
   var arr = [];
   var result = 0;
   if(str.indexOf("+") > 0){
     arr = str.split("+");
-    result = arr[0] + arr[1];
+    result = parseFloat(arr[0]) + parseFloat(arr[1]);
   }else if(str.indexOf("-") > 0){
     arr = str.split("-");
     result = arr[0] - arr[1];
