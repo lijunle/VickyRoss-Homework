@@ -1,20 +1,24 @@
 <div id="calculator-box">
   <!--显示部分 -->
-    <input id="formula" class="input-display" type="text" disabled="disabled"/>
-    <input id="result" class="input-display" type="text" disabled="disabled"/>
+    <input id="formula" class="input-display" type="text" maxlength="8" disabled="disabled"/>
+    <input id="result" class="input-display" type="text" maxlength="8" disabled="disabled"/>
   <!--按钮部分 -->
     <div class="number-box">
-    <button id="num7" class="btn -number" onclick="onclicknum(7)">7</button><button id="num8" class="btn -number" onclick="onclicknum(8)">8</button><button id="num9" class="btn -number" onclick="onclicknum(9)">9</button></div><button class="btn -operation" onclick="onclickclear()">DEL</button>
+    <button class="btn -left operand">7</button><button class="btn -left operand">8</button><button class="btn -left operand">9</button></div>
+  <button id="clear-btn" class="btn -right">DEL</button>
     
     <div class="number-box">
-    <button id="num4" class="btn -number" onclick="onclicknum(4)">4</button><button id="num5" class="btn -number" onclick="onclicknum(5)">5</button><button id="num6" class="btn -number" onclick="onclicknum(6)">6</button></div><button id="divide" class="btn -operation" onclick="onclicknum('÷')">÷</button>
+    <button class="btn -left operand">4</button><button class="btn -left operand">5</button><button class="btn -left operand">6</button></div>
+  <button id="divide" class="btn -right operand">÷</button>
     
     <div class="number-box">
-    <button id="num1" class="btn -number" onclick="onclicknum(1)">1</button><button id="num2" class="btn -number" onclick="onclicknum(2)">2</button><button id="num3" class="btn -number" onclick="onclicknum(3)">3</button></div><button id="mul" class="btn -operation" onclick="onclicknum('×')">×</button>
+    <button class="btn -left operand">1</button><button class="btn -left operand">2</button><button class="btn -left operand">3</button></div>
+  <button class="btn -right operand">×</button>
     
     <div class="number-box">
-    <button class="btn -number" onclick="onclicknum('.')">.</button><button id="num0"  class="btn -number" onclick="onclicknum(0)">0</button><button id="equal" class="btn -number" onclick="onclickresult()">=</button></div><button id="sub" class="btn -operation" onclick="onclicknum('-')">-</button>
+    <button class="btn -left operand">.</button><button class="btn -left operand">0</button><button id="equal" class="btn -left">=</button></div>
+  <button class="btn -right operand">-</button>
   
-      <button id="plus" class="btn -operation" onclick="onclicknum('+')">+</button>
+      <button class="btn -right operand">+</button>
 
 </div>
