@@ -5,46 +5,33 @@ var formulaValue;
 
 calculatorBox.addEventListener('click', function(event){
   var target = event.target;
-  while (target.tagName !== 'BUTTON') {
-    target = target.parentNode;
-    if (target === button) return;
-  }
-  /*数字按钮和操作按钮*/
-  if(target.className === "btn -left operand" || target.className === "btn -right operand"){
-    onclicknum(target.innerHTML);
-  }
+    /*数字按钮和操作按钮*/
+    if(target.className.indexOf('operand') !== -1){
+      handleClickNum(target.innerHTML);
+    }
    /*特殊的清除按钮和等号按钮*/
-  if(target.id === "clear-btn"){
-    onclickclear();
-  }else if(target.id === "equal"){
-    onclickresult();
-  }
-  
+    if(target.id === "clear-btn"){
+      handleClickDelete();
+    }else if(target.id === "equal"){
+      handleClickResult();
+    }
 });
 
 
-function onclicknum(operand) {
+function handleClickNum(operand) {
   formula.value = formula.value + operand;
-  var formulaValue = formula.value;
-  var isformula = isFormula(formulaValue);
-  var formulaResult = 0;
-  if (isformula) {
-    formulaResult = CalFormula(formulaValue);
-     if(formulaResult === Infinity){
-      result.value = "ERROR";
-    }else{
-      result.value = formulaResult;
-    }
-  }else{
-    result.value = "";
-  }
+  returnTheResult();
 }
-function onclickclear() {
+
+function handleClickDelete() {
   formula.style.fontSize = "80px";
-  formula.value = "";
-  result.value = "";
+  var beDeletedStr = formula.value;
+  formula.value = beDeletedStr.substr(0, beDeletedStr.length-1);
+  console.log(formula.value);
+  returnTheResult();
 }
-function onclickresult() { 
+
+function handleClickResult() { 
   formula.style.fontSize = "80px";
   if(result.value === "ERROR"){
     //...
@@ -84,7 +71,7 @@ function isFormula(str) {
 }
 
 /*计算算式*/
-function CalFormula(str){
+function calculateFormula(str){
   var arr = [];
   var result = 0;
   if(str.indexOf("+") > 0){
@@ -92,13 +79,30 @@ function CalFormula(str){
     result = parseFloat(arr[0]) + parseFloat(arr[1]);
   }else if(str.indexOf("-") > 0){
     arr = str.split("-");
-    result = arr[0] - arr[1];
+    result = parseFloat(arr[0]) - parseFloat(arr[1]);
   }else if(str.indexOf("×") > 0){
     arr = str.split("×");
-    result = arr[0] * arr[1];
+    result = parseFloat(arr[0]) * parseFloat(arr[1]);
   }else if(str.indexOf("÷") > 0){
     arr = str.split("÷");
-    result = arr[0] / arr[1];
+    result = parseFloat(arr[0]) / parseFloat(arr[1]);
   }
   return result;
+}
+/*返回计算结果*/
+function returnTheResult(){
+  var formulaValue = formula.value;
+  var isformula = isFormula(formulaValue);
+  var formulaResult = 0;
+  if (isformula) {
+    formulaResult = calculateFormula(formulaValue);
+     if(formulaResult === Infinity  || isNaN(formulaResult)){
+      result.value = "ERROR";
+    }
+    else{
+      result.value = formulaResult;
+    }
+  }else{
+    result.value = "";
+  }
 }
