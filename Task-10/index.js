@@ -24,32 +24,29 @@ function handleClickNum(operand) {
 }
 
 function handleClickDelete() {
-  formula.style.fontSize = "80px";
   var beDeletedStr = formula.value;
   formula.value = beDeletedStr.substr(0, beDeletedStr.length-1);
-  console.log(formula.value);
   returnTheResult();
 }
 
-function handleClickResult() { 
-  formula.style.fontSize = "80px";
+function handleClickResult() {
+  
   if(result.value === "ERROR"){
     //...
   }else if(result.value === ""){
     //...
   }
   else{
-    if(result.value.length > 8){
-      formula.style.fontSize = "40px";
+    if(result.value.indexOf('.') !== -1){
+      var index = result.value.indexOf('.');
+      result.value = result.value.substr(0, index + 6);
       formula.value = result.value;
       result.value = "";
     }
     else{
       formula.value = result.value;
-      console.log(formula.length);
       result.value = "";
     }
-    
   }
 }
 
@@ -89,6 +86,7 @@ function calculateFormula(str){
   }
   return result;
 }
+
 /*返回计算结果*/
 function returnTheResult(){
   var formulaValue = formula.value;
