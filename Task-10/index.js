@@ -6,30 +6,30 @@ var formulaValue;
 calculatorBox.addEventListener('click', function(event){
   var target = event.target;
     /*数字按钮和操作按钮*/
-    if(target.className.indexOf('operand') !== -1){
+    if(target.classList.contains('operand')){
       handleClickNum(target.innerHTML);
     }
    /*特殊的清除按钮和等号按钮*/
-    if(target.id === "clear-btn"){
+    else if(target.id === "clear-btn"){
       handleClickDelete();
     }else if(target.id === "equal"){
-      handleClickResult();
+      handleShowResult();
     }
 });
 
 
 function handleClickNum(operand) {
   formula.value = formula.value + operand;
-  returnTheResult();
+  displayResult();
 }
 
 function handleClickDelete() {
   var beDeletedStr = formula.value;
   formula.value = beDeletedStr.substr(0, beDeletedStr.length-1);
-  returnTheResult();
+  displayResult();
 }
 
-function handleClickResult() {
+function handleShowResult() {
   
   if(result.value === "ERROR"){
     //...
@@ -88,7 +88,7 @@ function calculateFormula(str){
 }
 
 /*返回计算结果*/
-function returnTheResult(){
+function displayResult(){
   var formulaValue = formula.value;
   var isformula = isFormula(formulaValue);
   var formulaResult = 0;
