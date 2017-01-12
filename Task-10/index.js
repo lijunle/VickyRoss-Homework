@@ -32,15 +32,15 @@ function handleClickDelete() {
 function handleShowResult() {
   
   if(result.value === "ERROR"){
-    //...
+    //no-op
   }else if(result.value === ""){
-    //...
+    //no-op
   }
+  /*处理无限小数*/
   else{
     if(result.value.indexOf('.') !== -1){
       var index = result.value.indexOf('.');
-      result.value = result.value.substr(0, index + 6);
-      formula.value = result.value;
+      formula.value = result.value.substr(0, index + 6);
       result.value = "";
     }
     else{
@@ -54,17 +54,24 @@ function handleShowResult() {
 function isFormula(str) {
   var operatorCount = 0;
   var strLength = str.length;
-  if(str[0] === "+" || str[0] === "-" || str[0] === "×" || str[0] === "÷"){
+  if(isOperator(str[0])){
     return false;
-  }else if(str[strLength-1] === "+" || str[strLength-1] === "-" || str[strLength-1] === "×" || str[strLength-1] === "÷"){
+  }else if(isOperator(str[strLength-1])){
     return false;
   }
   for (var i = 0; i < strLength; i++) {
-    if(str[i] === "+" || str[i] === "-" || str[i] === "×" || str[i] === "÷"){
+    if(isOperator(str[i])){
       operatorCount++;
     }
   }
   return operatorCount === 1;
+}
+
+/*判断是否是运算符*/
+function isOperator(char){
+  if(char === "+" || char === "-" || char === "×" || char === "÷"){
+    return true;
+  }else return false;
 }
 
 /*计算算式*/
