@@ -1,0 +1,51 @@
+#calculator-box{
+  width: 100%;
+}
+@media screen and (min-width:500px){
+  #calculator-box{
+    margin: 0 auto;
+    width: 500px;
+  }
+}
+.input-display{
+  padding: 0;
+  width: 100%;
+  border: none;
+  text-align: right;
+  background: #fff;
+  color: #000;
+}
+#formula{
+  height: 92px;
+  font-size: 80px;
+}
+#result{
+  font-size: 40px;
+}
+.number-box{
+  width: 75%;
+  float: left;
+}
+.btn{
+  border: none;
+  color: #fff;
+  text-align: center;
+}
+.-left{
+  width: 33.33333%;
+  height: 125px;
+  font-size: 45px;
+  background: rgb(9, 12, 9);
+}
+.-left:hover{
+ background: rgba(9, 12, 9, 0.9);
+}
+.-right{
+  width: 25%;
+  height: 100px;
+  font-size: 30px;
+  background: rgb(39, 42, 39);
+}
+.-right:hover{
+  background: rgba(39, 42, 39, 0.9);
+}
