@@ -54,9 +54,7 @@ function handleShowResult() {
 function isFormula(str) {
   var operatorCount = 0;
   var strLength = str.length;
-  if(isOperator(str[0])){
-    return false;
-  }else if(isOperator(str[strLength-1])){
+  if(isOperator(str[0]) || isOperator(str[strLength-1])){
     return false;
   }
   for (var i = 0; i < strLength; i++) {
@@ -69,9 +67,7 @@ function isFormula(str) {
 
 /*判断是否是运算符*/
 function isOperator(char){
-  if(char === "+" || char === "-" || char === "×" || char === "÷"){
-    return true;
-  }else return false;
+  return char === "+" || char === "-" || char === "×" || char === "÷";
 }
 
 /*计算算式*/
