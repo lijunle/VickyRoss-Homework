@@ -1,8 +1,13 @@
-<head> 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
 <link rel="stylesheet" type="text/css" href="/calculateCss.css" /> 
 <link rel="stylesheet" type="text/css" href="https://necolas.github.io/normalize.css/5.0.0/normalize.css" /> 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
+
+<body>
 <div id="calculator-box">
   <!--显示部分 -->
   <form action="calculatePost.php" method="post">
@@ -31,3 +36,6 @@
 
 </div>
 <script src="myScript.js"></script>
+</body>
+
+</html>
