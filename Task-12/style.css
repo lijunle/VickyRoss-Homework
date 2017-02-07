@@ -1,0 +1,20 @@
+html,body{
+  height: 100%;
+  width: 100%;
+}
+#btn-box{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#only-btn{
+  height: 100px;
+  width: 200px;
+  border-radius: 8px;
+  background: rgb(149, 211, 231);
+}
+#only-btn:hover{
+  background: rgb(135, 191, 210);
+}
