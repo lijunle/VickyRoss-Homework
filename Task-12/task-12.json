@@ -1,33 +1,46 @@
 {
-"Task":[
-{ 
-"Task1" : "仿照 Koa 官网"
-},{ 
-"Task2" : "仿制 Tap CLI 页面"
-},{
-"Task3" : "实现响应式表单"
-},{
-"Task4" : "学习 Bootstrap"
-},{
-"Task5" : "CSS 禅意花园（CSS Zen Garden）"
-},{
-"Task6" : "Markdown"
-},{
-"Task7" : "Document Object Model (DOM)"
-},{
-"Task8" : "jQuery"
-},{
-"Task9" : "计时器"
-},{
-"Task10" : "计算器"
-},{
-"Task11" : "表单处理"
-},{
-"Task12" : "AJAX"
-},{
-"Task13" : "JavaScript Template"
-},{
-"Task14" : "Task 查看器"
-}
-]
+    "Task": [
+        {
+            "Task1": "仿照 Koa 官网"
+        }, 
+        {
+            "Task2": "仿制 Tap CLI 页面"
+        }, 
+        {
+            "Task3": "实现响应式表单"
+        }, 
+        {
+            "Task4": "学习 Bootstrap"
+        }, 
+        {
+            "Task5": "CSS 禅意花园（CSS Zen Garden）"
+        }, 
+        {
+            "Task6": "Markdown"
+        }, 
+        {
+            "Task7": "Document Object Model (DOM)"
+        }, 
+        {
+            "Task8": "jQuery"
+        }, 
+        {
+            "Task9": "计时器"
+        }, 
+        {
+            "Task10": "计算器"
+        }, 
+        {
+            "Task11": "表单处理"
+        }, 
+        {
+            "Task12": "AJAX"
+        }, 
+        {
+            "Task13": "JavaScript Template"
+        }, 
+        {
+            "Task14": "Task 查看器"
+        }
+    ]
 }
