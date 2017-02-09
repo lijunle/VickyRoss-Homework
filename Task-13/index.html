@@ -1,0 +1,32 @@
+<head> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<script  type="text/x-handlebars-template" id="musics-template">
+
+  {{#each musics}}
+  <div class="music-box">
+  <img class="img" src={{image}}>
+  <div class="info">
+  <h3 class="name">{{title}} <span>{{alt_title}}</span></h3>
+  <p>{{attrs.media}} / {{attrs.publisher}} / {{attrs.pubdate}} / {{tags.5.name}} / {{attrs.version}} / {{attrs.singer}}</p>
+  <p>评分：{{rating.average}} ({{rating.numRaters}}人评价)</p>
+  </div>
+  </div>
+  {{/each}}
+
+</script>
+
+<div class="container">
+<div id="search-box">
+<h1 id="title" class="animated swing">Find Some Music!!</h1>
+  <form submit="event.preventDefault()" method="get">
+    <input id="search" type="text" placeholder="唱片名、表演者"/>
+    <input id="search-btn" type="submit" value="Start !"/>
+  </form>
+</div>
+
+  <div id="spinner-box"><i id="spinner"></i></div>
+  <div id="search-reslut" ></div>
+</div>
