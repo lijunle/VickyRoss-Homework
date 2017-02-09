@@ -3,16 +3,22 @@ $(document).ready(function(){
 	var source = $("#tutorial-template").html();
 	// 编译HTML生成对应的JS模板
 	var template = Handlebars.compile(source);
-	
-	$("#only-btn").click(getJson);
+	var onlyBtn = $("#only-btn");
+	onlyBtn.click(getJson);
 	/**getJson文件**/
 	function getJson(){
+		onlyBtn.attr("disabled","true");
+		
 		$.getJSON("task-12.json")
 		.done(function(result){
 			var context = result;
 			// 使用JS模板处理需要显示的JSON数据, 生成对应的HTML内容
 			var html = template(context);
 			$("#text").html(html);
+			var t = setTimeout(function(){
+				onlyBtn.removeAttr("disabled");
+			},2000);
+			
 		});
 	}
 	
