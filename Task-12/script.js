@@ -8,18 +8,21 @@ $(document).ready(function(){
 	/**getJson文件**/
 	function getJson(){
 		onlyBtn.attr("disabled","true");
-		
 		$.getJSON("task-12.json")
-		.done(function(result){
+		.then(function(result){
 			var context = result;
 			// 使用JS模板处理需要显示的JSON数据, 生成对应的HTML内容
 			var html = template(context);
 			$("#text").html(html);
-			var t = setTimeout(function(){
-				onlyBtn.removeAttr("disabled");
-			},2000);
-			
-		});
+		})
+		.then(function(){
+			var def = $.Deferred();
+			setTimeout(function(){ def.resolve(); },2000);
+			return def.promise();
+		})
+		.then(function(){
+			onlyBtn.removeAttr("disabled");
+		})
 	}
 	
 });
