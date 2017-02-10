@@ -19,21 +19,24 @@ h3 span{
 #search-box{
   width: 100%;
   padding: 10px 0 25px;
-  margin: 0 auto;
+  margin: 0 auto 30px;
   background: #3C3838;
-  margin-bottom: 30px;
   text-align: center;
 }
 @media screen and (min-width: 800px){
   #search-box{
     width: 800px;
-    margin: 20px auto 0;
+    margin-top: 20px;
     border-radius: 20px;
   }
 }
 #title{
   font-size: 24px;
   color: rgb(240, 255, 0);
+  cursor: pointer;
+}
+#title:hover{
+  animation-iteration-count: infinite;
 }
 @media screen and (min-width: 550px){
   #title{
@@ -41,27 +44,42 @@ h3 span{
   }
 }
 #search{
-  padding:0 0 0 8px;
-  width: 50%;
+  box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  padding: 0 8px;
+  width: 75%;
   height:30px;
   border-radius: 4px;
 }
-.focus-search{
-  border-top:2px solid rgb(240, 255, 0);
-  border-left:2px solid rgb(240, 255, 0);
-}
-#search-btn{
-  padding: 0;
-  width: 70px;
-  height:30px;
-  border-radius: 4px;
-  border: 1px solid rgb(176, 155, 155);
-  background: rgba(240, 255, 0,0.8);
-  color: rgb(17, 1, 1);
+@media screen and (min-width: 550px){
+  #search{
+    width: 50%;
+  }
 }
 @media screen and (min-width: 800px){
   #search{
     width: 400px;
+  }
+}
+#search:focus{
+  border-top:2px solid rgb(240, 255, 0);
+  border-left:2px solid rgb(240, 255, 0);
+}
+#search-btn{
+  box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  padding: 0;
+  width: 20%;
+  height:31px;
+  border-radius: 4px;
+  border: 1px solid rgb(176, 155, 155);
+  background: rgba(240, 255, 0,0.8);
+  color: rgb(17, 1, 1);
+  cursor: pointer;
+}
+@media screen and (min-width: 550px){
+  #search-btn{
+    width: 70px;
   }
 }
 
