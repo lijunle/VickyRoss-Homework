@@ -26,12 +26,11 @@ $(document).ready(function(){
 	function enableButton(){
 		onlyBtn.removeAttr("disabled");
 	}
-		
-		onlyBtn.click(function(){
-			getJson()
-			.then(afterTwoSecond)
-			.then(enableButton)
-		});
+	onlyBtn.click(function(){
+		getJson()
+		.then(afterTwoSecond)
+		.then(enableButton)
+	});
 		
 	
 });
