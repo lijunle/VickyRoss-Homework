@@ -7,16 +7,13 @@ $(document).ready(function(){
 	/**getJson文件**/
 	function getJson(){
 		onlyBtn.attr("disabled","true");
-		var def = $.Deferred();
-		$.getJSON("task-12.json")
+		return $.getJSON("task-12.json")
 		.then(function(result){
 			var context = result;
 			// 使用JS模板处理需要显示的JSON数据, 生成对应的HTML内容
 			var html = template(context);
 			$("#text").html(html);
-			def.resolve();
 		})
-		return def.promise();
 	}
 	function afterTwoSecond(){
 		var def = $.Deferred();
