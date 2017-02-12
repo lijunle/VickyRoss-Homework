@@ -5,26 +5,29 @@
 </head>
 
 <script  type="text/x-handlebars-template" id="musics-template">
+<ul id="music-result">
 {{#each musics}}
-  <div class="music-box">
+  <li class="music-box">
     <img class="img" src={{image}}>
-      <div class="info">
-        <h3 class="info-color">{{title}} <span>{{alt_title}}</span></h3>
-        <p class="info-color info-linehight">{{attrs.media}} / {{attrs.publisher}} /    {{attrs.pubdate}} / {{tags.5.name}} / {{attrs.version}} / {{attrs.singer}}</p>
-        <p class="info-color info-linehight">评分：{{rating.average}} ({{rating.numRaters}}人评价)</p>
-      </div>
-  </div>
+    <div class="info">
+      <h3 class="info-color">{{title}} <span>{{alt_title}}</span></h3>
+      <p class="info-color info-linehight">{{attrs.media}} / {{attrs.publisher}} / {{attrs.pubdate}} / {{tags.5.name}} / {{attrs.version}} / {{attrs.singer}}</p>
+      <p class="info-color info-linehight">评分：{{rating.average}} ({{rating.numRaters}}人评价)</p>
+    </div>
+  </li>
 {{/each}}
+</ul>
 
 </script>
 
 <div id="search-box">
   <h1 id="title" class="animated swing">Find Some Music!!</h1>
-  <form method="get">
+  <form>
     <input id="search" type="text" placeholder="唱片名、表演者"/>
     <input id="search-btn" type="submit" value="Start !"/>
   </form>
 </div>
-
-  <div id="spinner-box"><i id="spinner" class="fa fa-spinner fa-pulse fa-3x fa-fw"></i></div>
-  <div id="search-reslut" ></div>
+<div id="spinner-box">
+  <i id="spinner" class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+</div>
+<div id="search-reslut" ></div>
