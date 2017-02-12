@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<link rel="stylesheet" type="text/css" href="AJAXCss.css" /> 
+<link rel="stylesheet" type="text/css" href="https://necolas.github.io/normalize.css/5.0.0/normalize.css" /> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="AJAXJs.js"></script>
+
+<!-- 导入handlebars 相关JS  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js"></script>
+</head>
+
+<body>
+<div id="text">
+</div>
+<div id="btn-box">
+  <button id="only-btn">AJAX!!</button>
+</div>
+
+<script type="text/x-handlebars-template" id="tutorial-template">
+<ul>
+  {{#each Task}}
+    {{#each this}}
+      <li>
+        {{@key}}
+        <ul>
+          <li>{{this}}</li>
+        </ul>
+      </li>
+    {{/each}}
+  {{/each}}
+</ul>
+
+</script>
+
+</body>
+</html>
