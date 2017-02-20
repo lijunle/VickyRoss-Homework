@@ -4,7 +4,6 @@ var spinner = $("#spinner");
 var source = $("#musics-template").html();
 var template = Handlebars.compile(source);
 var searchResult = $("#search-reslut");
-var noResult = $("#no-result");
 spinner.hide();
 
 $("form").submit(function(e){
@@ -12,7 +11,6 @@ $("form").submit(function(e){
   searchMusic();
 });
 function searchMusic(){
-  noResult.hide();
   spinner.show();
   searchResult.html("");
   var val = search.val();
