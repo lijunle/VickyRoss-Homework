@@ -8,18 +8,29 @@ $(document).ready(function(){
   var files = $("#files");
   var fileLink = $("#file-link");
   var code = $("#code");
-  getReadMe();
+  var selected = selection.find("option:selected").text();
+  window.location.hash = "#" + selected;
+  getReadMe(selected);
   getFilesName();
   getFilesCode();
   selection.change(function(){
+    var selectedOption = selection.find("option:selected").text();
+    console.log(selectedOption);
     files.html("");
-    getReadMe();
+    getReadMe(selectedOption);
     getFilesName();
     getFilesCode();
+    var hash = "#" + selectedOption;
+    window.location.hash = hash;
   });
-  function getReadMe(){
-    var selected = selection.val();
-    $.getJSON("https://api.github.com/repos/lijunle/VickyRoss-Homework/contents/" + selected + "/README.md")
+  window.onhashchange = function(){
+    var hash = window.location.hash;
+    var selectedOption = hash.substr(1);
+    getReadMe(selectedOption);
+    selection.val(selectedOption);
+  };
+  function getReadMe(a){
+    $.getJSON("https://api.github.com/repos/lijunle/VickyRoss-Homework/contents/" + a + "/README.md")
       .done(function(result){
       var markdown = b64DecodeUnicode(result.content);
       var html = marked(markdown);
@@ -73,6 +84,7 @@ $(document).ready(function(){
     });
   });
   }
+   
   
 });
 
