@@ -37,12 +37,9 @@
   {{#each this}} 
      {{#isfile name}}
      <li>
-       <a id="file-link" href="#">{{this.name}}</a>
+       <a id="file-link" href="javascript:void(0)">{{this.name}}</a>
      </li>
      {{/isfile}}
   {{/each}}
 </ul>
-</script>
-<script type="text/x-handlebars-template" id="code-template">
-<pre><code>{{{this}}}</code></pre>
 </script>
